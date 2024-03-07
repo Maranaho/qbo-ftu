@@ -8,14 +8,14 @@ const SearchInput = () => {
     const { state:{ searchValue },dispatch } = useQBOState()
     const [focus,setFocus ] = useState(false)
     const inputRef = useRef(null)
-    const loadTime = randomNumber(100,500)
+    const loadTime = randomNumber(500,900)
     let timeout
 
     const handleChange = e =>{
         const val = e.target.value
         dispatch({type:"SEARCH_VALUE",payload:val})
         timeout = setTimeout(()=>{
-            dispatch({type:"LOADING",payload:false})
+            dispatch({type:"LOAD_COMPANIES",payload:false})
         },loadTime)
     }
 
@@ -38,7 +38,7 @@ const SearchInput = () => {
             </button>
             <input
                 ref={inputRef}
-                placeholder="Enter company name, number, officer name or zip code"
+                placeholder="Search by company name, number, officer name or zip code..."
                 value={searchValue}
                 onFocus={handleFocus}
                 onBlur={()=>setFocus(false)}

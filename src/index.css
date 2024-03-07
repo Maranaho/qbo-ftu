@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   font-family: avenirRegular;
   font-size: 17px;
+  overscroll-behavior: none;
 }
 
 button {
@@ -26,6 +27,10 @@ p {
   display: flex;
   align-items: center;
   font-size: 0.9em;
+}
+.btn a {
+  color: #fff;
+  text-decoration: none;
 }
 .btn:hover {
   background: rgb(40, 146, 24);
@@ -51,6 +56,23 @@ p {
   background: rgb(255, 249, 215);
 }
 
+@keyframes pulse {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+.LoadingCompanies div {
+  opacity: 0.4;
+  padding: 40px 20vw;
+  animation: pulse 0.6s linear infinite alternate;
+}
+.LoadingCompanies div:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 @keyframes showup {
   from {
     opacity: 0;
@@ -61,23 +83,6 @@ p {
     transform: translateY(0px);
   }
 }
-@keyframes pulse {
-  from {
-    opacity: 0.2;
-  }
-  to {
-    opacity: 0.4;
-  }
-}
-.Loading div {
-  opacity: 0.4;
-  padding: 40px 20vw;
-  animation: pulse 0.6s linear infinite alternate;
-}
-.Loading div:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
 .Company {
   padding: 40px 20vw;
   display: flex;
@@ -140,6 +145,14 @@ p {
   font-size: 1.5em;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .SearchHead {
   display: flex;
   flex-direction: column;
@@ -152,20 +165,52 @@ p {
   top: 0;
 }
 .SearchHead h2 {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.2s;
   font-family: avenirBold;
   font-size: 2em;
   margin: 0 0 35px 0;
 }
 
+@keyframes slide {
+  0% {
+    width: 95%;
+    opacity: 0;
+  }
+  50% {
+    width: 100.5%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slideSearch {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 .SearchInput {
+  opacity: 0;
   display: flex;
   align-items: center;
   border: 1px solid #d8d8d8;
+  animation: slide 1.5s cubic-bezier(0.68, -0.02, 0.11, 1) forwards;
   padding: 0 15px;
-  width: 100%;
+  width: 60%;
   box-sizing: border-box;
   border-radius: 100px;
   transition: 0.2s ease;
+}
+.SearchInput:hover {
+  border-color: #b1b1b1;
 }
 .SearchInput.focus {
   border-color: #64a7f6;
@@ -175,6 +220,8 @@ p {
   border: none;
   padding: 8px;
   margin-right: 4px;
+  transform: translateX(5px);
+  animation: slideSearch 1.8s cubic-bezier(0.68, -0.02, 0.11, 1) forwards;
 }
 .SearchInput button:hover {
   opacity: 0.5;
@@ -185,7 +232,7 @@ p {
   font-family: avenirRegular;
   padding: 20px 0;
   width: calc(100% - 50px);
-  font-size: 0.8em;
+  font-size: 0.9em;
   background: none;
 }
 .SearchInput input::-moz-placeholder {
@@ -193,4 +240,14 @@ p {
 }
 .SearchInput input::placeholder {
   color: rgb(158, 158, 158);
+}
+
+.Loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */

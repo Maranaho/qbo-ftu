@@ -5,12 +5,26 @@ let initialQBOState = {
   limiter: 10,
   listLength:0,
   loading: false,
+  selectedCompany:null,
+  loadingCompanies: false
 }
 
 const QBOContext = React.createContext()
 
 function qboReducer(state, action) {
   switch (action.type) {
+
+    case 'LOAD_COMPANIES': {
+      let LOAD_COMPANIES = {...state}
+      LOAD_COMPANIES.loadingCompanies = action.payload
+      return LOAD_COMPANIES
+    }
+
+    case 'SELECTED_COMPANY': {
+      let SELECTED_COMPANY = {...state}
+      SELECTED_COMPANY.selectedCompany = action.payload
+      return SELECTED_COMPANY
+    }
 
     case 'LOADING': {
       let LOADING = {...state}
@@ -27,7 +41,7 @@ function qboReducer(state, action) {
     case 'SEARCH_VALUE': {
       let SEARCH_VALUE = {...state}
       SEARCH_VALUE.searchValue = action.payload
-      SEARCH_VALUE.loading = true
+      SEARCH_VALUE.loadingCompanies = true
       return SEARCH_VALUE
     }
 

@@ -31,6 +31,7 @@ body {
   font-size: 14px;
   font-family: avenirRegular;
   font-size: $fontSize;
+  overscroll-behavior: none;
 }
 
 button{cursor: pointer}
@@ -39,6 +40,10 @@ p {margin: 0}
 .btn {
   font-family: avenirDemi;
   color: #fff;
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
   background: $qb;
   border: 1px solid $qb;
   padding: 7px 17px;
@@ -61,17 +66,6 @@ p {margin: 0}
   background: $highlight;
 }
 
-@keyframes showup {
-  from{
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
 @keyframes pulse {
   from{
     opacity: .2;
@@ -80,7 +74,7 @@ p {margin: 0}
     opacity: .4;
   }
 }
-.Loading {
+.LoadingCompanies {
   div {
     opacity: .4;
     padding: 40px 20vw;
@@ -88,6 +82,17 @@ p {margin: 0}
     &:not(:last-child){
       border-bottom: 1px solid rgba(0,0,0,.05);
     }
+  }
+}
+
+@keyframes showup {
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -148,6 +153,16 @@ p {margin: 0}
   }
 }
 
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .SearchHead {
   display: flex;
   flex-direction: column;
@@ -159,27 +174,60 @@ p {margin: 0}
   z-index: 1;
   top: 0;
   h2 {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards .2s;
     font-family: avenirBold;
     font-size: 2em;
     margin: 0 0 35px 0;
   }
 }
 
+@keyframes slide {
+  0%{
+    width: 95%;
+    opacity: 0;
+  }
+  50%{
+    width: 100.5%;
+    opacity: 1;
+  }
+  100%{
+    width: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slideSearch {
+  0%{
+    transform: translateX(10px)
+  }
+  50%{
+    transform: translateX(-2px)
+  }
+  100%{
+    transform: translateX(0px)
+  }
+}
+
 .SearchInput {
+  opacity: 0;
   display: flex;
   align-items: center;
   border: 1px solid #d8d8d8;
+  animation: slide 1.5s cubic-bezier(0.68,-0.02, 0.11, 1)forwards;
   padding: 0 15px;
-  width: 100%;
+  width: 60%;
   box-sizing: border-box;
   border-radius: 100px;
   transition: .2s ease;
+  &:hover { border-color: #b1b1b1}
   &.focus { border-color: #64a7f6}
   button {
     background: none;
     border: none;
     padding: 8px;
     margin-right: 4px;
+    transform: translateX(5px);
+    animation: slideSearch 1.8s cubic-bezier(0.68,-0.02, 0.11, 1)forwards;
     &:hover{opacity: .5}
   }
   input {
@@ -188,9 +236,18 @@ p {margin: 0}
     font-family: avenirRegular;
     padding: 20px 0;
     width: calc(100% - 50px);
-    font-size: .8em;
+    font-size: .9em;
     background: none;
     &::placeholder { color: rgb(158, 158, 158)}
   }
 }
 
+.Loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,.8);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

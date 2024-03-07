@@ -4,11 +4,11 @@ import { companies,meta } from "../data/companiesData.js"
 import SearchHead from "./SearchHead"
 import ListCompanies from "./ListCompanies"
 import NoResult from "./NoResult"
-import Loading from "./Loading"
+import LoadingCompanies from "./LoadingCompanies.jsx"
 
 const Demo = () => {
 
-    const { state:{ searchValue,listLength,loading },dispatch } = useQBOState()
+    const { state:{ searchValue,listLength,loadingCompanies },dispatch } = useQBOState()
 
     const filteredCompany = company =>{
         const { name,director,zip:post,companyNumber } = company
@@ -25,13 +25,22 @@ const Demo = () => {
 
     const companiesMap = companies.filter(company=>filteredCompany(company))
     const noResult = !listLength && searchValue !== ""
+
     const getLength = ()=> dispatch({type:"LIST_LENGTH",payload:companiesMap.length>0})
+    const clearSearch = ()=> {
+        dispatch({type:"SEARCH_VALUE",payload:""})
+        dispatch({type:"LOAD_COMPANIES",payload:false})
+    }
+
     useEffect(getLength,[companiesMap.length])
+    useEffect(()=>{
+        return clearSearch
+    },[])
 
     return (
         <main>
             <SearchHead />
-            {loading && !noResult ?<Loading/>:<ListCompanies companiesMap={companiesMap}/>}
+            {loadingCompanies && !noResult ?<LoadingCompanies/>:<ListCompanies companiesMap={companiesMap}/>}
             {noResult && <NoResult/>}
         </main>
     )
