@@ -1,0 +1,253 @@
+{
+    "companiesTypes":[
+        "Private Company Limited by Shares (LTD)",
+        "Public Limited Company (PLC)",
+        "Company Limited by Guarantee",
+        "Unlimited Company",
+        "Limited Liability Partnership (LLP)"
+    ],
+    "types":[
+        "LTD",
+        "PLC",
+        "LTD",
+        "ULTD",
+        "LLP"
+    ],
+    "industries":[
+        "Agriculture, Forestry, Fishing, and Hunting",
+        "Arts, Entertainment, and Recreation",
+        "Construction",
+        "Education and Health Services",
+        "Financial Activities",
+        "Information",
+        "Management of Companies and Enterprises",
+        "Manufacturing",
+        "Mining, Quarrying, and Oil and Gas Extraction",
+        "Other Services (except Public Administration)",
+        "Professional, Scientific, and Technical Services",
+        "Public Administration",
+        "Real Estate and Rental and Leasing",
+        "Retail Trade",
+        "Transportation and Warehousing",
+        "Utilities",
+        "Wholesale Trade",
+        "Information technology consultancy activities"
+    ],
+    "natureOfBusiness":[
+        "Agriculture, Forestry, and Fishing",
+        "Mining and Quarrying",
+        "Manufacturing",
+        "Electricity, Gas, Steam, and Air Conditioning Supply",
+        "Water Supply, Sewerage, Waste Management, and Remediation Activities",
+        "Construction",
+        "Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles",
+        "Transportation and Storage",
+        "Accommodation and Food Service Activities",
+        "Information and Communication",
+        "Financial and Insurance Activities",
+        "Real Estate Activities",
+        "Professional, Scientific, and Technical Activities",
+        "Administrative and Support Service Activities",
+        "Public Administration and Defence; Compulsory Social Security",
+        "Education",
+        "Human Health and Social Work Activities",
+        "Arts, Entertainment, and Recreation",
+        "Other Service Activities",
+        "Activities of Households as Employers; Undifferentiated Goods- and Services-Producing Activities of Households for Own Use",
+        "Activities of Extraterritorial Organizations and Bodies"
+      ],
+      "zipcode":[
+        {
+            "zip": "E1 1AB",
+            "address": "123 Brick Lane, London"
+        },
+        {
+            "zip": "SE1 2CD",
+            "address": "456 Riverside Road, London"
+        },
+        {
+            "zip": "NW1 3EF",
+            "address": "789 Park Avenue, London"
+        },
+        {
+            "zip": "SW1 4GH",
+            "address": "101 Buckingham Palace Road, London"
+        },
+        {
+            "zip": "N1 5IJ",
+            "address": "246 Angel Street, London"
+        },
+        {
+            "zip": "W2 6KL",
+            "address": "369 Notting Hill Gate, London"
+        },
+        {
+            "zip": "E3 7MN",
+            "address": "555 Canary Wharf, London"
+        },
+        {
+            "zip": "SE2 8OP",
+            "address": "777 Greenwich Park, London"
+        },
+        {
+            "zip": "NW3 9QR",
+            "address": "888 Hampstead Heath, London"
+        },
+        {
+            "zip": "SW3 0ST",
+            "address": "999 Chelsea Embankment, London"
+        },
+        {
+            "zip": "E4 1UV",
+            "address": "111 Walthamstow Village, London"
+        },
+        {
+            "zip": "SE5 2WX",
+            "address": "222 Camberwell Green, London"
+        },
+        {
+            "zip": "N6 3YZ",
+            "address": "333 Highgate Hill, London"
+        },
+        {
+            "zip": "W7 4AB",
+            "address": "444 Ealing Broadway, London"
+        },
+        {
+            "zip": "E8 5CD",
+            "address": "555 Dalston Lane, London"
+        },
+        {
+            "zip": "SE9 6EF",
+            "address": "66 Eltham High Street, London"
+        },
+        {
+            "zip": "NW8 7GH",
+            "address": "777 Abbey Road, London"
+        },
+        {
+            "zip": "SW10 8IJ",
+            "address": "888 King's Road, London"
+        },
+        {
+            "zip": "E11 9KL",
+            "address": "999 Leytonstone High Road, London"
+        },
+        {
+            "zip": "SE12 0MN",
+            "address": "123 Grove Park, London"
+        },
+        {
+            "zip": "N13 1OP",
+            "address": "456 Palmers Green, London"
+        },
+        {
+            "zip": "W14 2QR",
+            "address": "789 West Kensington, London"
+        },
+        {
+            "zip": "E15 3ST",
+            "address": "101 Stratford Broadway, London"
+        },
+        {
+            "zip": "SE16 4UV",
+            "address": "246 Rotherhithe Street, London"
+        },
+        {
+            "zip": "NW5 5WX",
+            "address": "2 Kentish Town Road, London"
+        },
+        {
+            "zip": "SW6 6YZ",
+            "address": "7 Fulham Road, London"
+        },
+        {
+            "zip": "E17 7AB",
+            "address": "34 Walthamstow Central, London"
+        },
+        {
+            "zip": "SE18 8CD",
+            "address": "23 Woolwich High Street, London"
+        },
+        {
+            "zip": "NW9 9EF",
+            "address": "16 Colindale Avenue, London"
+        },
+        {
+            "zip": "SW11 0GH",
+            "address": "99 Battersea Park Road, London"
+        },
+        {
+            "zip": "SWE 4UN",
+            "address": "7 Zulu Mews, London"
+        },
+        {
+            "zip": "SE22 2KL",
+            "address": "3 East Dulwich Road, London"
+        },
+        {
+            "zip": "N15 3MN",
+            "address": "18 Seven Sisters Road, London"
+        },
+        {
+            "zip": "W3 4OP",
+            "address": "32 Acton High Street, London"
+        },
+        {
+            "zip": "E20 5QR",
+            "address": "Park Way Avenue, London"
+        },
+        {
+            "zip": "SE7 6ST",
+            "address": "17 Charlton Lane, London"
+        },
+        {
+            "zip": "NW2 7UV",
+            "address": "8 Common vue Cricklewood Broadway, London"
+        },
+        {
+            "zip": "SW8 8AB",
+            "address": "78 Nine Elms Lane, London"
+        },
+        {
+            "zip": "E10 9CD",
+            "address": "90 Leyton High Road, London"
+        },
+        {
+            "zip": "SE23 0EF",
+            "address": "5 Forest Hill Road, London"
+        },
+        {
+            "zip": "N16 1IJ",
+            "address": "4 Stoke Newington Road, London"
+        },
+        {
+            "zip": "W5 2KL",
+            "address": "3 Ealing Road, London"
+        },
+        {
+            "zip": "E14 3MN",
+            "address": "34 Canary Wharf Road, London"
+        },
+        {
+            "zip": "SE3 4OP",
+            "address": "12 Blackheath Village, London"
+        },
+        {
+            "zip": "NW6 5QR",
+            "address": "8 Kilburn High Road, London"
+        },
+        {
+            "zip": "SW4 6ST",
+            "address": "90 Clapham High Street, London"
+        },
+        {
+            "zip": "E18 7UV",
+            "address": "South Woodford Lane, London"
+        },
+        {
+            "zip": "FY4 2RH",
+            "address": "4 Calder Court, Amy Johnson Way, Blackpool"
+        }
+    ]
+}
