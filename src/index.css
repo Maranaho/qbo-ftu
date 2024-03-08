@@ -20,6 +20,8 @@ p {
 .btn {
   font-family: avenirDemi;
   color: #fff;
+  display: flex;
+  justify-content: center;
   background: #2D9E1C;
   border: 1px solid #2D9E1C;
   padding: 7px 17px;
@@ -76,7 +78,7 @@ p {
 @keyframes showup {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -174,7 +176,7 @@ p {
 
 @keyframes slide {
   0% {
-    width: 95%;
+    width: 97%;
     opacity: 0;
   }
   50% {
@@ -188,7 +190,7 @@ p {
 }
 @keyframes slideSearch {
   0% {
-    transform: translateX(10px);
+    transform: translateX(3px);
   }
   50% {
     transform: translateX(-2px);
@@ -242,12 +244,65 @@ p {
   color: rgb(158, 158, 158);
 }
 
+@keyframes fadeLoad {
+  from {
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
 .Loading {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);
+  animation: fadeLoad 0.3s ease forwards;
+  background: rgba(255, 255, 255, 0);
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Loading .riveComponent {
+  width: 100px;
+  height: 100px;
+}
+
+.GreetingUser {
+  text-align: center;
+  width: 500px;
+  margin: 10vh auto;
+  animation: showup 1.2s cubic-bezier(0.56, 0, 0, 1) forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.GreetingUser .riveComponent {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: -250px;
+  left: -225px;
+  z-index: 0;
+}
+.GreetingUser img {
+  margin: 20px 0;
+}
+.GreetingUser h1, .GreetingUser p, .GreetingUser button {
+  z-index: 1;
+  position: relative;
+}
+.GreetingUser h1 {
+  font-family: avenirBold;
+  margin: 0 0 20px 0;
+  font-size: 2em;
+}
+.GreetingUser .btnCtn {
+  display: flex;
+  justify-content: center;
+  padding: 60px 70px 0;
+}
+.GreetingUser .btnCtn button {
+  flex: 1;
 }/*# sourceMappingURL=index.css.map */
