@@ -6,6 +6,7 @@ let initialQBOState = {
   listLength:0,
   loading: false,
   selectedCompany:null,
+  fetchingDetails: false,
   loadingCompanies: false
 }
 
@@ -24,6 +25,12 @@ function qboReducer(state, action) {
       let SELECTED_COMPANY = {...state}
       SELECTED_COMPANY.selectedCompany = action.payload
       return SELECTED_COMPANY
+    }
+
+    case 'FETCHING_DETAILS': {
+      let FETCHING_DETAILS = {...state}
+      FETCHING_DETAILS.fetchingDetails = action.payload
+      return FETCHING_DETAILS
     }
 
     case 'LOADING': {

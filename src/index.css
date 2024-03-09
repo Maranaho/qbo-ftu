@@ -1,7 +1,7 @@
 @import './assets/font/font.css';
 body {
   margin: 0;
-  color: #333;
+  color: #393B3D;
   font-weight: 400;
   font-size: 14px;
   font-family: avenirRegular;
@@ -249,18 +249,28 @@ p {
     background: rgba(255, 255, 255, 0);
   }
   to {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgb(255, 255, 255);
   }
 }
 .Loading {
   position: fixed;
   inset: 0;
-  animation: fadeLoad 0.3s ease forwards;
+  animation: fadeLoad 0.5s ease forwards;
   background: rgba(255, 255, 255, 0);
   z-index: 2;
   display: flex;
   justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
+  padding-top: 25vh;
+}
+.Loading > div {
+  display: flex;
+  flex-direction: column;
+}
+.Loading.progress .riveComponent {
+  width: 468px;
+  height: 16px;
+  margin-top: 10px;
 }
 .Loading .riveComponent {
   width: 100px;
@@ -441,10 +451,53 @@ p {
 }
 .DropDown ul li {
   padding: 10px;
-  color: #333;
+  color: #393B3D;
   cursor: pointer;
 }
 .DropDown ul li.selected {
   color: #fff;
   background: #2D9E1C;
+}
+
+.Checkbox {
+  display: flex;
+  padding: 10px 0;
+}
+.Checkbox input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Checkbox input:checked + label:after {
+  display: block;
+}
+.Checkbox label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.Checkbox label:before {
+  content: "";
+  margin-right: 10px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #c3c3c3;
+}
+.Checkbox label:after {
+  content: "";
+  display: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #2D9E1C;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }/*# sourceMappingURL=index.css.map */

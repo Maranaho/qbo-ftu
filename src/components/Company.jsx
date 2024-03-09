@@ -2,14 +2,15 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQBOState } from '../context.jsx'
 import { meta } from "../data/companiesData.js"
-import randomNumber from "../utils/randomNumber"
+// import randomNumber from "../utils/randomNumber"
 import SearchMatch from "./SearchMatch"
 
 const Company = ({company,idx}) => {
     
     const { dispatch } = useQBOState()
     const navigate = useNavigate()
-    const loadTime = randomNumber(3000,5200)
+    // const loadTime = randomNumber(3000,5200)
+    const loadTime = 8000
     const delay = .07
     let timeToNavigate
     const {
@@ -28,10 +29,10 @@ const Company = ({company,idx}) => {
 
     const handleCompanyClick =()=>{
         dispatch({type:"SELECTED_COMPANY",payload:company})
-        dispatch({type:"LOADING",payload:true})
+        dispatch({type:"FETCHING_DETAILS",payload:true})
         timeToNavigate = setTimeout(()=>{
             navigate(`/greeting/${director.split(" ")[0]}`)
-            dispatch({type:"LOADING",payload:false})
+            dispatch({type:"FETCHING_DETAILS",payload:false})
         },loadTime)
     }
 
