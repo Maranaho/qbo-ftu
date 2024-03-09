@@ -9,7 +9,7 @@ const Company = ({company,idx}) => {
     
     const { dispatch } = useQBOState()
     const navigate = useNavigate()
-    const loadTime = randomNumber(1500,3200)
+    const loadTime = randomNumber(3000,5200)
     const delay = .07
     let timeToNavigate
     const {

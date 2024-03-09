@@ -6,17 +6,12 @@ import {
   import DetailForm from './DetailForm'
   import GreetingUser from './GreetingUser'
   
-  const Proto = ()=>{
-  
-    return (
-          
-      <Routes>
-        <Route path="/" element={<FindCompany/>}/>
-        <Route path="/greeting/:user" element={<GreetingUser/>}/>
-        <Route path="/review-company-details" element={<DetailForm/>}/>
-        <Route path='*' element={<p>404</p>} />
-      </Routes>
-        
-    )
-  }
+  const Proto = ()=>(
+    <Routes>
+      <Route path="/" element={<FindCompany/>}/>
+      <Route path="/greeting/:user" element={<GreetingUser/>}/>
+      <Route path="/review-company-details" element={<DetailForm/>}/>
+      <Route path='*' element={<p>404</p>} />
+    </Routes>
+  )
     export default Proto
