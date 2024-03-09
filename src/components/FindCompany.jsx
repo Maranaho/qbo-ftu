@@ -1,12 +1,12 @@
 import { useEffect } from "react"
 import { useQBOState } from '../context.jsx'
 import { companies,meta } from "../data/companiesData.js"
-import SearchHead from "./SearchHead"
-import ListCompanies from "./ListCompanies"
-import NoResult from "./NoResult"
+import SearchHead from "./SearchHead.jsx"
+import ListCompanies from "./ListCompanies.jsx"
+import NoResult from "./NoResult.jsx"
 import LoadingCompanies from "./LoadingCompanies.jsx"
 
-const Demo = () => {
+const FindCompany = () => {
 
     const { state:{ searchValue,listLength,loadingCompanies },dispatch } = useQBOState()
 
@@ -46,4 +46,4 @@ const Demo = () => {
     )
 }
  
-export default Demo;
+export default FindCompany

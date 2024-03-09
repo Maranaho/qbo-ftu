@@ -9,8 +9,7 @@ const App = ()=>{
   return (
     <BrowserRouter>
         <Proto />
-  
-    {loading&&<Loading/>}
+      {loading&&<Loading/>}
     </BrowserRouter>
   )
 }

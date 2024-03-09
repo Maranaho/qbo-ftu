@@ -2,7 +2,7 @@ import {
     Route,
     Routes
   } from "react-router-dom"
-  import Demo from './Demo'
+  import FindCompany from './FindCompany'
   import DetailForm from './DetailForm'
   import GreetingUser from './GreetingUser'
   
@@ -11,7 +11,7 @@ import {
     return (
           
       <Routes>
-        <Route path="/" element={<Demo/>}/>
+        <Route path="/" element={<FindCompany/>}/>
         <Route path="/greeting/:user" element={<GreetingUser/>}/>
         <Route path="/review-company-details" element={<DetailForm/>}/>
         <Route path='*' element={<p>404</p>} />
