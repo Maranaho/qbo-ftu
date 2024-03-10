@@ -89,10 +89,24 @@ p {
   padding: 40px 20vw;
   display: flex;
   flex-direction: column;
-  animation: showup 0.7s ease forwards;
+  animation: showup 1.3s cubic-bezier(0.63, 0.01, 0, 1) forwards;
   opacity: 0;
   transform: translateY(10px);
+  transition: 0.5s cubic-bezier(0.72, -0.01, 0.12, 1.01) !important;
+  overflow: hidden;
+  height: 204px;
+  box-sizing: border-box;
   cursor: pointer;
+}
+.Company .riveComponent {
+  width: 34px;
+  margin-left: 10px;
+}
+.Company.selected {
+  border: none;
+}
+.Company.unSelected {
+  opacity: 0 !important;
 }
 .Company div > span,
 .Company p > span {
@@ -111,7 +125,7 @@ p {
   display: flex;
   align-items: center;
 }
-.Company h3 > span:nth-of-type(2) {
+.Company h3 .type {
   font-family: avenirBold;
   margin-left: 10px;
   color: #fff;
@@ -120,13 +134,13 @@ p {
   border-radius: 20px;
   padding: 2px 8px;
 }
-.Company h3 > span:nth-of-type(2).plc {
+.Company h3 .type.plc {
   background: #008CDE;
 }
-.Company h3 > span:nth-of-type(2).ultd {
+.Company h3 .type.ultd {
   background: #FF7424;
 }
-.Company h3 > span:nth-of-type(2).llp {
+.Company h3 .type.llp {
   background: #E91792;
 }
 
@@ -255,7 +269,7 @@ p {
 .Loading {
   position: fixed;
   inset: 0;
-  animation: fadeLoad 0.5s ease forwards;
+  animation: fadeLoad 0.3s ease forwards;
   background: rgba(255, 255, 255, 0);
   z-index: 2;
   display: flex;

@@ -104,9 +104,23 @@ p {margin: 0}
   padding: 40px 20vw;
   display: flex;
   flex-direction: column;
-  animation: showup .7s ease forwards;
+  animation: showup 1.3s cubic-bezier(0.63, 0.01, 0, 1) forwards;
   opacity: 0;
   transform: translateY(10px);
+  transition: .5s cubic-bezier(0.72,-0.01, 0.12, 1.01) !important;
+  overflow: hidden;
+  height: 204px;
+  box-sizing: border-box;
+  .riveComponent {
+    width: 34px;
+    margin-left: 10px;
+  }
+  &.selected{
+    border: none;
+  }
+  &.unSelected{
+    opacity: 0 !important;
+  }
   // &:hover {background: #fafafa84}
   cursor: pointer;
   div > span,
@@ -121,19 +135,17 @@ p {margin: 0}
     font-size: 1.5em;
     display: flex;
     align-items: center;
-    > span{
-      &:nth-of-type(2){
-        font-family: avenirBold;
-        margin-left: 10px;
-        color:#fff;
-        background: $qb;
-        font-size: .4em;
-        border-radius: 20px;
-        padding: 2px 8px;
-        &.plc{ background: $blue}
-        &.ultd{ background: $orange}
-        &.llp{ background: $pink}
-      }
+    .type {
+      font-family: avenirBold;
+      margin-left: 10px;
+      color:#fff;
+      background: $qb;
+      font-size: .4em;
+      border-radius: 20px;
+      padding: 2px 8px;
+      &.plc{ background: $blue}
+      &.ultd{ background: $orange}
+      &.llp{ background: $pink}
     }
   }
 }
@@ -259,7 +271,7 @@ p {margin: 0}
 .Loading {
   position: fixed;
   inset: 0;
-  animation: fadeLoad .5s ease forwards;
+  animation: fadeLoad .3s ease forwards;
   background: rgba(255,255,255,0);
   z-index: 2;
   display: flex;

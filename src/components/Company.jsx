@@ -4,16 +4,20 @@ import { useQBOState } from '../context.jsx'
 import { meta } from "../data/companiesData.js"
 // import randomNumber from "../utils/randomNumber"
 import SearchMatch from "./SearchMatch"
+import RiveAnim from "./RiveAnim"
+import check from "../assets/rive/check.riv"
 
 const Company = ({company,idx}) => {
     
-    const { dispatch } = useQBOState()
+    const { state:{ selectedCompany },dispatch } = useQBOState()
     const navigate = useNavigate()
     // const loadTime = randomNumber(3000,5200)
     const loadTime = 8000
     const delay = .07
     let timeToNavigate
+    let time2
     const {
+            key,
             name,
             director,
             zip:post,
@@ -26,30 +30,43 @@ const Company = ({company,idx}) => {
 
     const zipCode = meta.zipcode[post]
     const { zip, address } = zipCode
+    const selected = selectedCompany && selectedCompany.key === key
+    const unSelected = selectedCompany && selectedCompany.key !== key
 
     const handleCompanyClick =()=>{
         dispatch({type:"SELECTED_COMPANY",payload:company})
-        dispatch({type:"FETCHING_DETAILS",payload:true})
-        timeToNavigate = setTimeout(()=>{
-            navigate(`/greeting/${director.split(" ")[0]}`)
-            dispatch({type:"FETCHING_DETAILS",payload:false})
-        },loadTime)
+        time2 = setTimeout(()=>{
+            dispatch({type:"FETCHING_DETAILS",payload:true})
+            timeToNavigate = setTimeout(()=>{
+                navigate(`/greeting/${director.split(" ")[0]}`)
+                dispatch({type:"FETCHING_DETAILS",payload:false})
+            },loadTime)
+        },2500)
     }
 
     useEffect(()=>{
-        return ()=> clearTimeout(timeToNavigate)
+        return ()=> {
+            clearTimeout(timeToNavigate)
+            clearTimeout(time2)
+        }
     },[])
-    
 
     return (
         <article
-            className="Company"
-            style={{animationDelay:idx * delay + "s"}}
+            className={`Company ${selected ? "selected":""} ${unSelected ? "unSelected":""}`}
+            style={{animationDelay:!unSelected ? idx * delay + "s" : "0s"}}
             onClick={handleCompanyClick}
         >
             <h3>
                 <SearchMatch text={name}/>
-                <span className={meta.types[companyType].toLowerCase()}>{meta.types[companyType]}</span>
+                {!selected&&<span className={"type " + meta.types[companyType].toLowerCase()}>{meta.types[companyType]}</span>}
+                {selected&&(
+                    <RiveAnim
+                        src={check}
+                        stateMachines="check"
+                        artboard="check"
+                />
+                )}
             </h3>
             <div>
                 <SearchMatch text={companyNumber.split("-")[1]}/>
