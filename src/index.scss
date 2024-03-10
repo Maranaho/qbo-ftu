@@ -39,6 +39,13 @@ body {
 button{cursor: pointer}
 p {margin: 0}
 
+.link {
+  color: $blue;
+  font-family: avenirMedium;
+  cursor: pointer;
+  &:hover{ text-decoration: underline}
+}
+
 .btn {
   font-family: avenirDemi;
   color: #fff;
@@ -118,9 +125,9 @@ p {margin: 0}
   &.selected{
     border: none;
   }
-  &.unSelected{
-    opacity: 0 !important;
-  }
+  // &.unSelected{
+  //   opacity: 0 !important;
+  // }
   // &:hover {background: #fafafa84}
   cursor: pointer;
   div > span,
@@ -373,6 +380,7 @@ p {margin: 0}
   padding: 15px 0;
   display: flex;
   flex-direction: column;
+  &:hover h4 {opacity: .6}
   
   &.noStarted {
     .childTitle {
@@ -522,5 +530,23 @@ p {margin: 0}
       top: 5px;
       left: 5px;
     }
+  }
+}
+
+.DetailForm {
+  width: 860px;
+  margin: 0 auto;
+}
+
+.ReviewHeader{
+  padding: 100px 0;
+  text-align: center;
+  h1 {
+    margin: 0 0 20px 0;
+    font-family: avenirBold;
+    font-size: 2.9em;
+  }
+  p{
+    font-size: 1.1em;    
   }
 }
