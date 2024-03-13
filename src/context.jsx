@@ -7,13 +7,20 @@ let initialQBOState = {
   loading: false,
   selectedCompany:null,
   fetchingDetails: false,
-  loadingCompanies: false
+  loadingCompanies: false,
+  opens:[]
 }
 
 const QBOContext = React.createContext()
 
 function qboReducer(state, action) {
   switch (action.type) {
+
+    case 'OPENS': {
+      let OPENS = {...state}
+      OPENS.opens = action.payload
+      return OPENS
+    }
 
     case 'LOAD_COMPANIES': {
       let LOAD_COMPANIES = {...state}

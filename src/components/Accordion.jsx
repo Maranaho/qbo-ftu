@@ -2,26 +2,30 @@ import { useState,useEffect } from "react"
 import MeasuringPurposes from "./MeasuringPurposes"
 import { AccordionChild } from "./AccordionChild"
 import AccordionRenderedChild from "./AccordionRenderedChild"
+import { useQBOState } from '../context.jsx'
 
 const AccordionParent = ({children,unlink=false}) => {
+    
+    const { dispatch } = useQBOState()
     const [ heights,setHeights ] = useState(null)
-    const [ opens,setOpens ] = useState(null)
 
-      useEffect(()=>setOpens(children.map(()=>false)),[])
+      useEffect(()=>{
+        const newOpens = children.map(child=>child.props.openByDefault)
+        dispatch({type:"OPENS",payload:newOpens})
+    },[])
     return (
         <section className="AccordionParent">
             {heights&&children.map((child,idx)=>{
-                const { title, height } = heights[idx]
+                const { title, height, openByDefault } = heights[idx]
                 return (
                     <AccordionRenderedChild
                         idx={idx}
-                        opens={opens}
-                        unlink={unlink}
-                        setOpens={setOpens}
-                        expandedHeight={height}
                         title={title}
-                        key={`trueChild${idx}`}
+                        unlink={unlink}
                         children={child}
+                        expandedHeight={height}
+                        key={`trueChild${idx}`}
+                        openByDefault={openByDefault}
                     />
                 )
             })}

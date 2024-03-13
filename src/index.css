@@ -39,6 +39,9 @@ p {
   align-items: center;
   font-size: 0.9em;
 }
+.btn:disabled {
+  opacity: 0.3;
+}
 .btn a {
   color: #fff;
   text-decoration: none;
@@ -121,7 +124,7 @@ p {
 .Company:not(:last-child) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-.Company:hover h3 span:nth-of-type(1) {
+.Company:not(:active):hover h3 span:nth-of-type(1) {
   text-decoration: underline;
 }
 .Company h3 {
@@ -389,6 +392,7 @@ p {
 }
 .AccordionChild.expanded .childJSX {
   opacity: 1;
+  transform: translateY(0);
 }
 .AccordionChild .childTitle {
   display: flex;
@@ -405,7 +409,9 @@ p {
   opacity: 1;
   flex: 1;
   font-size: 1.1em;
-  background: none;
+  background: #fff;
+  position: relative;
+  z-index: 1;
   border: none;
   display: flex;
   align-items: center;
@@ -425,10 +431,16 @@ p {
   overflow: hidden;
   transition: 0.8s cubic-bezier(0.58, -0.01, 0, 1);
   opacity: 0;
+  transform: translateY(-50px);
 }
 
 .DropDown {
   position: relative;
+}
+.DropDown label {
+  font-family: avenirRegular;
+  font-size: 0.8em;
+  opacity: 0.6;
 }
 .DropDown.focus .clickableInput {
   border-color: #2D9E1C;
@@ -437,6 +449,7 @@ p {
   cursor: text;
 }
 .DropDown .clickableInput {
+  margin: 10px 0;
   display: flex;
   align-items: center;
   border-radius: 4px;
@@ -466,16 +479,23 @@ p {
   list-style: none;
   margin: 0;
   position: absolute;
-  top: 38px;
-  left: 0;
-  width: 100%;
+  top: 70px;
+  left: 5px;
+  z-index: 2;
+  width: calc(100% - 10px);
   background: #fff;
   outline: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .DropDown ul li {
   padding: 10px;
   color: #393B3D;
   cursor: pointer;
+}
+.DropDown ul li:hover {
+  background: rgba(0, 0, 0, 0.02);
 }
 .DropDown ul li.selected {
   color: #fff;
@@ -531,8 +551,12 @@ p {
 }
 
 .ReviewHeader {
-  padding: 100px 0;
+  padding: 90px 0;
   text-align: center;
+  position: sticky;
+  background: #fff;
+  z-index: 2;
+  top: 0;
 }
 .ReviewHeader h1 {
   margin: 0 0 20px 0;
@@ -541,4 +565,102 @@ p {
 }
 .ReviewHeader p {
   font-size: 1.1em;
+}
+
+.BusinessCard {
+  width: 300px;
+  height: 190px;
+  background: url("./assets/svg/visa.svg") 20px 20px no-repeat;
+  position: relative;
+  border: 1px solid #2D9E1C;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  margin: 30px 10px;
+  transform-style: preserve-3d;
+}
+.BusinessCard span {
+  color: #b6b6b6;
+}
+.BusinessCard:before {
+  content: "";
+  height: 100%;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(#2D9E1C, #33C9D5);
+}
+
+.BusinessCardApplication {
+  perspective: 2000px;
+}
+
+.UpdateBusinessName .Checkbox {
+  padding: 20px 0;
+}
+.UpdateBusinessName .disclaimer {
+  color: #b6b6b6;
+  font-size: 0.7em;
+}
+.UpdateBusinessName .Field {
+  width: 50%;
+}
+
+.Save {
+  padding: 40px 0 20px;
+}
+.Save .btn {
+  min-width: 250px;
+}
+
+.AboutYourBusiness .BusinessType {
+  width: calc(50% - 10px);
+}
+.AboutYourBusiness .halfField {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ReviewYourInfo {
+  position: relative;
+  padding: 30px 0;
+}
+.ReviewYourInfo .edit {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+.ReviewYourInfo .edit:hover {
+  opacity: 0.5;
+}
+.ReviewYourInfo h3 {
+  font-family: avenirMedium;
+  font-size: 1em;
+}
+.ReviewYourInfo > article {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ReviewYourInfo > article .Field, .ReviewYourInfo > article .savedInfo {
+  align-self: center;
+  padding: 0;
+}
+.ReviewYourInfo > article .savedInfo {
+  font-size: 0.8em;
+  padding: 8px;
+}
+.ReviewYourInfo > article > label {
+  font-family: avenirRegular;
+  font-size: 0.8em;
+  opacity: 0.6;
+  padding: 20px 0;
 }/*# sourceMappingURL=index.css.map */

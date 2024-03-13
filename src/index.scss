@@ -5,6 +5,7 @@ $qbActive:rgb(34, 129, 20);
 $blue: #008CDE;
 $pink: #E91792;
 $orange: #FF7424;
+$greyTxt: #b6b6b6;
 
 //Buttons
 $secondaryBtnStroke: #5A5A5A;
@@ -51,6 +52,7 @@ p {margin: 0}
   color: #fff;
   display: flex;
   justify-content: center;
+  &:disabled{opacity: .3}
   a{
     color: #fff;
     text-decoration: none;
@@ -62,8 +64,10 @@ p {margin: 0}
   display: flex;
   align-items: center;
   font-size: .9em;
-  &:hover{ background: $qbHover}
-  &:active{ background: $qbActive}
+  // :not(:disabled){
+    &:hover{ background: $qbHover}
+    &:active{ background: $qbActive}
+  // }
   > img { margin-right: $btnSpacing}
   &.secondary{
       background: $secondaryBtnBG;
@@ -125,17 +129,13 @@ p {margin: 0}
   &.selected{
     border: none;
   }
-  // &.unSelected{
-  //   opacity: 0 !important;
-  // }
-  // &:hover {background: #fafafa84}
   cursor: pointer;
   div > span,
   p > span {margin-right: 6px}
   &:not(:last-child){
     border-bottom: 1px solid rgba(0,0,0,.05);
   }
-  &:hover h3 span:nth-of-type(1){text-decoration: underline}
+  &:not(:active):hover h3 span:nth-of-type(1){text-decoration: underline}
   h3{
     margin: 0 0 10px 0;
     font-family: avenirMedium;
@@ -391,7 +391,10 @@ p {margin: 0}
   
   &.expanded {
     .childTitle button > img {transform: rotate(0deg)}
-    .childJSX {opacity: 1}
+    .childJSX {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .childTitle {
@@ -410,7 +413,10 @@ p {margin: 0}
       opacity: 1;
       flex: 1;
       font-size: 1.1em;
-      background: none;
+      
+      background: #fff;
+      position: relative;
+      z-index: 1;
       border: none;
       display: flex;
       align-items: center;
@@ -433,15 +439,22 @@ p {margin: 0}
     overflow: hidden;
     transition: .8s cubic-bezier(0.58,-0.01, 0, 1);
     opacity: 0;
+    transform: translateY(-50px);
   }
 }
 
 .DropDown {
   position: relative;
+  label {
+    font-family: avenirRegular;
+    font-size: .8em;
+    opacity: .6
+  }
 
   &.focus .clickableInput{ border-color: $qb}
   &.typable input { cursor: text}
   .clickableInput {
+    margin: 10px 0;
     display: flex;
     align-items: center;
     border-radius: 4px;
@@ -472,14 +485,19 @@ p {margin: 0}
     list-style: none;
     margin: 0;
     position: absolute;
-    top: 38px;
-    left: 0;
-    width: 100%;
+    top: 70px;
+    left: 5px;
+    z-index: 2;
+    width: calc(100% - 10px);
     background: #fff;
     outline: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
     li {
       padding: 10px;
       color:$txt;
+      &:hover{ background: rgba(0,0,0,.02)}
       cursor: pointer;
       &.selected {
         color: #fff;
@@ -539,8 +557,12 @@ p {margin: 0}
 }
 
 .ReviewHeader{
-  padding: 100px 0;
+  padding: 90px 0;
   text-align: center;
+  position: sticky;
+  background: #fff;
+  z-index: 2;
+  top: 0;
   h1 {
     margin: 0 0 20px 0;
     font-family: avenirBold;
@@ -550,3 +572,99 @@ p {margin: 0}
     font-size: 1.1em;    
   }
 }
+
+.BusinessCard {
+  width: 300px;
+  height: 190px;
+  background: url("./assets/svg/visa.svg") 20px 20px no-repeat;
+  position: relative;
+  border: 1px solid $qb;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: .9em;
+  margin: 30px 10px;
+  transform-style: preserve-3d;
+  span{ color: $greyTxt}
+  &:before{
+    content:"";
+    height: 100%;
+    width: 20px;
+    position: absolute;
+    top:0;
+    right: 0;
+    background: linear-gradient($qb,#33C9D5);
+  }
+}
+
+.BusinessCardApplication {
+  perspective: 2000px;
+}
+
+.UpdateBusinessName {
+  .Checkbox {
+    padding: 20px 0;
+  }
+  .disclaimer {
+    color: $greyTxt;
+    font-size: .7em;
+  }
+  .Field{ width: 50%}
+}
+
+.Save {
+  padding: 40px 0 20px;
+  .btn { min-width: 250px}
+}
+
+.AboutYourBusiness {
+
+  .BusinessType { width: calc(50% - 10px)}
+  .halfField{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+}
+
+.ReviewYourInfo {
+  position: relative;
+  padding: 30px 0;
+  .edit {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    &:hover {
+      opacity: .5;
+    }
+  }
+  h3 {
+    font-family: avenirMedium;
+    font-size: 1em;
+  }
+  > article {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    .Field,.savedInfo{
+      align-self: center;
+      padding: 0;
+    }
+    .savedInfo {
+      font-size: .8em;
+      padding: 8px;
+    }
+    > label {
+      font-family: avenirRegular;
+      font-size: .8em;
+      opacity: .6;
+      padding: 20px 0;
+    }
+  }
+}
+

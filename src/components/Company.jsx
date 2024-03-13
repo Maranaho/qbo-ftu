@@ -2,16 +2,16 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQBOState } from '../context.jsx'
 import { meta } from "../data/companiesData.js"
-// import randomNumber from "../utils/randomNumber"
 import SearchMatch from "./SearchMatch"
 import RiveAnim from "./RiveAnim"
 import check from "../assets/rive/check.riv"
+import { useLocalstorageState } from "rooks"
 
 const Company = ({company,idx}) => {
     
-    const { state:{ selectedCompany },dispatch } = useQBOState()
+    const { dispatch } = useQBOState()
+    const [selectedCompany,setSelectedCompany] = useLocalstorageState("selectedCompany",null)
     const navigate = useNavigate()
-    // const loadTime = randomNumber(3000,5200)
     const loadTime = 8000
     const delay = .07
     let timeToNavigate
@@ -34,14 +34,15 @@ const Company = ({company,idx}) => {
     const unSelected = selectedCompany && selectedCompany.key !== key
 
     const handleCompanyClick =()=>{
-        dispatch({type:"SELECTED_COMPANY",payload:company})
+        // dispatch({type:"SELECTED_COMPANY",payload:company})
+        setSelectedCompany(company)
         time2 = setTimeout(()=>{
             dispatch({type:"FETCHING_DETAILS",payload:true})
             timeToNavigate = setTimeout(()=>{
                 navigate(`/greeting/${director.split(" ")[0]}`)
                 dispatch({type:"FETCHING_DETAILS",payload:false})
             },loadTime)
-        },2500)
+        },2000)
     }
 
     useEffect(()=>{

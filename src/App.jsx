@@ -4,7 +4,6 @@ import Loading from "./components/Loading.jsx"
 import FetchingDetails from "./components/FetchingDetails.jsx"
 import Proto from './components/Proto'
 
-
 const App = ()=>{
   
   const { state:{ loading,fetchingDetails } } = useQBOState()

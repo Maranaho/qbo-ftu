@@ -2,10 +2,12 @@ import { useState,useEffect,useRef } from "react"
 import chevron from "../assets/svg/chevron-down.svg"
 
 const DropDown = ({
+    label,
     selected = 0,
     onChange,
-    options,
+    options = [],
     typable,
+    className
 }) => {
 
     const [focus,setFocus] = useState(false)
@@ -32,8 +34,9 @@ const DropDown = ({
         <div
             tabIndex="0"
             onFocus={()=>setFocus(true)}
-            className={`DropDown ${focus?"focus":""}`}
+            className={`DropDown ${focus?"focus":""} ${className}`}
             >
+            {label&&<label>{label}</label>}
             <div className="clickableInput">
                 <input
                     ref={inputRef}

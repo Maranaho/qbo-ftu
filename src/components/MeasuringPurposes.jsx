@@ -10,10 +10,12 @@ const MeasuringPurposes = ({ children,setHeights }) => {
 
         const childInfo = children.map((_, idx) => {
           const ref = childRefs.current[idx]
-          const title = children[idx].props.title
+          const { props } = children[idx]
+          const title = props.title
+          const openByDefault = props.hasOwnProperty("openByDefault")
           const noData = {title:"",height:0}
-          const height = ref.getBoundingClientRect().height
-          const info = {height,title}
+          const height = ref.getBoundingClientRect().height + 2
+          const info = {height,title,openByDefault}
           return ref ? info : noData
         })
       

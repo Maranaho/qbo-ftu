@@ -1,6 +1,4 @@
-import { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { useQBOState } from '../context.jsx'
 import RiveAnim  from "./RiveAnim"
 import NavButton from "./NavButton"
 import welcome from "../assets/svg/welcome.svg"
@@ -8,11 +6,7 @@ import confetti from "../assets/rive/confetti.riv"
 
 const GreetingUser = () => {
     const params = useParams()
-    const { dispatch } = useQBOState()
 
-    useEffect(()=>{
-        return ()=>dispatch({type:"SELECTED_COMPANY",payload:null})
-    })
      
     return (
         <div className="GreetingUser">

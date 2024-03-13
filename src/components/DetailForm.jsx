@@ -1,6 +1,6 @@
 import { AccordionParent, AccordionChild } from './Accordion'
 import ReviewHeader from './ReviewHeader'
-import BusinessCardAppliation from './BusinessCardAppliation'
+import BusinessCardApplication from './BusinessCardApplication'
 import AboutYourBusiness from './AboutYourBusiness'
 import AboutYou from './AboutYou'
 import LegalText from './LegalText'
@@ -10,18 +10,15 @@ const DetailForm = () => (
         <ReviewHeader/>
         <AccordionParent>
             <AccordionChild 
+                
                 title="Business checking account and debit card"
             >
-                <BusinessCardAppliation />
+                <BusinessCardApplication />
             </AccordionChild>
-            <AccordionChild 
-                title="About your business"
-            >
+            <AccordionChild openByDefault title="About your business" >
                 <AboutYourBusiness />
             </AccordionChild>
-            <AccordionChild 
-                title="About you"
-            >
+            <AccordionChild title="About you">
                 <AboutYou />
                 <LegalText />
             </AccordionChild>
