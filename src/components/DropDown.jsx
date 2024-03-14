@@ -43,7 +43,7 @@ const DropDown = ({
                     readOnly={!typable}
                     value={options[selected]}
                     onChange={onChange}
-                    />
+                />
                 <button className="chevron"><img src={chevron}/></button>
             </div>
             {focus&&(

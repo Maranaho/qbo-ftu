@@ -10,12 +10,12 @@ const DetailForm = () => (
         <ReviewHeader/>
         <AccordionParent>
             <AccordionChild 
-                
+                openByDefault
                 title="Business checking account and debit card"
             >
                 <BusinessCardApplication />
             </AccordionChild>
-            <AccordionChild openByDefault title="About your business" >
+            <AccordionChild title="About your business" >
                 <AboutYourBusiness />
             </AccordionChild>
             <AccordionChild title="About you">

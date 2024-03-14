@@ -5,12 +5,12 @@ import editBtn from '../assets/svg/edit.svg'
 import tick from '../assets/svg/tick.svg'
 
 const ReviewYourInfo = () => {
-
+    const defaultPhone = "+44 7598 863677"
     const [selectedCompany] = useLocalstorageState("selectedCompany",null)
     const businessName = selectedCompany.director.split(" ")[0]
     const defaultEmail = `info@${businessName.toLowerCase()}-llp.com`
     const [userEmail,setUserEmail] = useLocalstorageState("userEmail",defaultEmail)
-    const [userPhone,setUserPhone] = useLocalstorageState("userPhone","+44 7598 863677")
+    const [userPhone,setUserPhone] = useLocalstorageState("userPhone",defaultPhone)
     const [editable,setEditable] = useState(false)
 
     const handleKeyDown = e =>{

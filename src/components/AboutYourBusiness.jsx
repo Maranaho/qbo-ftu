@@ -3,7 +3,6 @@ import DropDown from "./DropDown"
 import meta from "../data/meta.json"
 import Save from "./Save"
 import ReviewYourInfo from "./ReviewYourInfo"
-
 import { useLocalstorageState } from "rooks"
 
 const AboutYourBusiness = () => {
@@ -33,7 +32,6 @@ const AboutYourBusiness = () => {
                 />
             </div>
             <DropDown
-                typable
                 label="Industry"
                 options={meta.industries}
                 onChange={selectedOption=>handleChange(selectedOption,"industry")}

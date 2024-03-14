@@ -17,11 +17,23 @@ p {
   margin: 0;
 }
 
+.btn.link,
 .link {
   color: #008CDE;
   font-family: avenirMedium;
+  background: none;
+  border: none;
   cursor: pointer;
 }
+.btn.link:active,
+.link:active {
+  background: none;
+}
+.btn.link:hover,
+.link:hover {
+  background: none;
+}
+.btn.link:hover,
 .link:hover {
   text-decoration: underline;
 }
@@ -346,6 +358,13 @@ p {
   font-family: avenirRegular;
   font-size: 0.8em;
   padding: 10px 0;
+  position: relative;
+}
+.Field .showPassBtn {
+  top: 37px;
+}
+.Field .showPassBtn img {
+  width: 19px;
 }
 .Field label {
   opacity: 0.6;
@@ -356,7 +375,7 @@ p {
   border-radius: 4px;
   border: 1px solid #c3c3c3;
   outline: none;
-  margin: 10px 0;
+  margin: 5px 0 10px;
 }
 .Field input:focus {
   border-color: #2D9E1C;
@@ -364,7 +383,7 @@ p {
 
 .MeasuringPurposes {
   position: absolute;
-  top: 0;
+  top: -2000vh;
   left: 0;
   visibility: hidden;
   width: 100%;
@@ -436,6 +455,7 @@ p {
 
 .DropDown {
   position: relative;
+  padding: 10px 0;
 }
 .DropDown label {
   font-family: avenirRegular;
@@ -449,7 +469,7 @@ p {
   cursor: text;
 }
 .DropDown .clickableInput {
-  margin: 10px 0;
+  margin: 5px 0 10px;
   display: flex;
   align-items: center;
   border-radius: 4px;
@@ -488,6 +508,8 @@ p {
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  overflow-y: scroll;
 }
 .DropDown ul li {
   padding: 10px;
@@ -516,6 +538,9 @@ p {
   display: block;
 }
 .Checkbox label {
+  font-family: avenirRegular;
+  font-size: 0.8em;
+  color: rgb(155, 155, 155);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -611,35 +636,50 @@ p {
   width: 50%;
 }
 
+.finish,
 .Save {
   padding: 40px 0 20px;
 }
+.finish .btn,
 .Save .btn {
   min-width: 250px;
 }
 
+.AboutYou,
+.AboutYourBusiness {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.AboutYou .phoneNumber,
+.AboutYou .BusinessType,
+.AboutYourBusiness .phoneNumber,
 .AboutYourBusiness .BusinessType {
   width: calc(50% - 10px);
 }
+.AboutYou .halfField,
 .AboutYourBusiness .halfField {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.ReviewYourInfo {
-  position: relative;
-  padding: 30px 0;
-}
-.ReviewYourInfo .edit {
+.showPassBtn,
+.edit {
   background: none;
   border: none;
   position: absolute;
   top: 30px;
   right: 0;
 }
-.ReviewYourInfo .edit:hover {
+.showPassBtn:hover,
+.edit:hover {
   opacity: 0.5;
+}
+
+.ReviewYourInfo {
+  position: relative;
+  padding: 30px 0;
 }
 .ReviewYourInfo h3 {
   font-family: avenirMedium;
@@ -663,4 +703,53 @@ p {
   font-size: 0.8em;
   opacity: 0.6;
   padding: 20px 0;
+}
+
+.LegalText {
+  font-family: avenirRegular;
+  font-size: 0.8em;
+  opacity: 0.4;
+  padding: 20px 0 80px;
+}
+.LegalText h5 {
+  font-family: avenirDemi;
+  font-size: 1em;
+  margin: 30px 0 10px;
+}
+.LegalText ul {
+  padding-left: 15px;
+}
+
+.threeRows {
+  display: flex;
+  align-items: center;
+}
+.threeRows .Field:nth-of-type(2) {
+  width: 420px;
+  margin: 0 20px;
+}
+.threeRows .Field:nth-of-type(1),
+.threeRows .DropDown {
+  width: 200px;
+}
+.threeRows .DropDown {
+  transform: translateY(-2px);
+}
+
+.Approved img {
+  transform: scaleX(-1) translateX(10px);
+}
+
+.BringYourMoney {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+.BringYourMoney .btnCtn {
+  width: 920px;
+  display: flex;
+}
+.BringYourMoney .btnCtn .btn {
+  margin-right: 10px;
 }/*# sourceMappingURL=index.css.map */
