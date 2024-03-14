@@ -37,7 +37,11 @@ body {
   overscroll-behavior: none;
 }
 
-button{cursor: pointer}
+button{
+  cursor: pointer;
+  font-family: avenirMedium;
+  color: $txt;
+}
 p {margin: 0}
 
 .btn.link,
@@ -57,22 +61,25 @@ p {margin: 0}
   color: #fff;
   display: flex;
   justify-content: center;
-  &:disabled{opacity: .3}
+  &:disabled{
+    opacity: .3;
+    cursor: not-allowed;
+  }
   a{
     color: #fff;
     text-decoration: none;
   }
   background: $qb;
   border: 1px solid $qb;
-  padding: 7px 17px;
+  padding: 7px 40px;
   border-radius: $btnRadius;
   display: flex;
   align-items: center;
   font-size: .9em;
-  // :not(:disabled){
+  &:not(:disabled){
     &:hover{ background: $qbHover}
     &:active{ background: $qbActive}
-  // }
+  }
   > img { margin-right: $btnSpacing}
   &.secondary{
       background: $secondaryBtnBG;
@@ -306,11 +313,10 @@ p {margin: 0}
     height: 100px;
   }
 }
-
 .GreetingUser {
-  text-align: center;
   width: 500px;
   margin: 10vh auto;
+  text-align: center;
   animation: showup 1.2s $ease forwards;
   opacity: 0;
   transform: translateY(10px);
@@ -819,4 +825,63 @@ p {margin: 0}
   animation: showup 3s cubic-bezier(0.38, 0.01, 0, 1.01) forwards;
   opacity: 0;
   transform: translateY(10px);
+}
+
+.Survey {
+  margin: 10vh auto 0;
+  width: 900px;
+  h1 {
+    margin: 0 0 15px 0;
+    font-family: avenirBold;
+    font-size: 2em;
+  }
+  h2 {
+    font-family: avenirRegular;
+    font-size: 1.15em;
+    margin: 0;
+  }
+  .btnCtn {
+    display: flex;
+  }
+}
+
+.Reasons {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  padding: 70px 0;
+  .Tile {
+    > div {
+      display: flex;
+      align-items: center;
+      > span {
+        font-size: 1.1em;
+        font-family: avenirRegular;
+      }
+    }
+    img,.riveComponent{
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.Tile {
+  border: 2px solid #fff;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  // transform: translateY(0);
+  transition: .4s cubic-bezier(0.48, 0.01, 0, 1.01);
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,.1);
+  &:hover {
+
+    // transform: translateY(-1px);
+    box-shadow: 0 7px 12px 0 rgba(0,0,0,.07);
+  }
+  &.selected {
+    background: #E9F5EC;
+    border-color: $qb;
+  }
 }

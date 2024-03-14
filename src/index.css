@@ -11,6 +11,8 @@ body {
 
 button {
   cursor: pointer;
+  font-family: avenirMedium;
+  color: #393B3D;
 }
 
 p {
@@ -45,7 +47,7 @@ p {
   justify-content: center;
   background: #2D9E1C;
   border: 1px solid #2D9E1C;
-  padding: 7px 17px;
+  padding: 7px 40px;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -53,15 +55,16 @@ p {
 }
 .btn:disabled {
   opacity: 0.3;
+  cursor: not-allowed;
 }
 .btn a {
   color: #fff;
   text-decoration: none;
 }
-.btn:hover {
+.btn:not(:disabled):hover {
   background: rgb(40, 146, 24);
 }
-.btn:active {
+.btn:not(:disabled):active {
   background: rgb(34, 129, 20);
 }
 .btn > img {
@@ -313,9 +316,9 @@ p {
 }
 
 .GreetingUser {
-  text-align: center;
   width: 500px;
   margin: 10vh auto;
+  text-align: center;
   animation: showup 1.2s cubic-bezier(0.56, 0, 0, 1) forwards;
   opacity: 0;
   transform: translateY(10px);
@@ -844,4 +847,58 @@ p {
   animation: showup 3s cubic-bezier(0.38, 0.01, 0, 1.01) forwards;
   opacity: 0;
   transform: translateY(10px);
+}
+
+.Survey {
+  margin: 10vh auto 0;
+  width: 900px;
+}
+.Survey h1 {
+  margin: 0 0 15px 0;
+  font-family: avenirBold;
+  font-size: 2em;
+}
+.Survey h2 {
+  font-family: avenirRegular;
+  font-size: 1.15em;
+  margin: 0;
+}
+.Survey .btnCtn {
+  display: flex;
+}
+
+.Reasons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 70px 0;
+}
+.Reasons .Tile > div {
+  display: flex;
+  align-items: center;
+}
+.Reasons .Tile > div > span {
+  font-size: 1.1em;
+  font-family: avenirRegular;
+}
+.Reasons .Tile img, .Reasons .Tile .riveComponent {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.Tile {
+  border: 2px solid #fff;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.4s cubic-bezier(0.48, 0.01, 0, 1.01);
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+}
+.Tile:hover {
+  box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 0.07);
+}
+.Tile.selected {
+  background: #E9F5EC;
+  border-color: #2D9E1C;
 }/*# sourceMappingURL=index.css.map */

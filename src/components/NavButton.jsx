@@ -5,7 +5,14 @@ import chevronLeft from "../assets/svg/chevronLeft.svg"
 import chevronLeftWhite from "../assets/svg/chevronLeftWhite.svg"
 
 
-const NavButton = ({variant = "primary",label = "Continue",back,url,cb}) =>{
+const NavButton = ({
+    cb,
+    url,
+    back,
+    disabled,
+    label = "Continue",
+    variant = "primary",
+  }) =>{
 
   const {dispatch } = useQBOState()
   let navigate = useNavigate()
@@ -14,6 +21,7 @@ const NavButton = ({variant = "primary",label = "Continue",back,url,cb}) =>{
   const max = 3000
 
   const handleNavigate = ()=>{
+    if(disabled)return
     dispatch({type:"LOADING",payload:true})
     timeout = setTimeout(()=>{
       navigate(url)
@@ -30,6 +38,7 @@ const NavButton = ({variant = "primary",label = "Continue",back,url,cb}) =>{
   <button
     variant={variant}
     onClick={url?handleNavigate:cb}
+    disabled={disabled}
     className={`btn ${variant}`}>
     {back&&<img src={variant !== "primary" ? chevronLeft : chevronLeftWhite}/>}
     <span>{label}</span>
