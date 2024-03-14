@@ -61,7 +61,8 @@ const AboutYourBusiness = () => {
                 label="ZIP code"
                 value={zips}
                 onChange={e=>setZips(e.target.value)}
-                />
+                width="200px"
+            />
             <ReviewYourInfo />
             <Save parentIdx={1} />
         </div>
