@@ -752,4 +752,96 @@ p {
 }
 .BringYourMoney .btnCtn .btn {
   margin-right: 10px;
+}
+
+.TopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+}
+.TopBar .rightNav,
+.TopBar .menuImg {
+  cursor: pointer;
+}
+.TopBar .searchImg {
+  cursor: text;
+}
+.TopBar > div {
+  display: flex;
+  align-items: center;
+}
+.TopBar > div > span {
+  font-family: avenirMedium;
+  font-size: 0.8em;
+  margin-right: 20px;
+}
+
+.QBO {
+  display: flex;
+}
+.QBO > section {
+  flex: 1;
+}
+
+.QBOHead {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #eee;
+}
+.QBOHead .tabs {
+  width: 192px;
+  cursor: pointer;
+}
+
+.Home {
+  padding: 0 40px;
+  position: relative;
+}
+.Home .Loading {
+  position: static;
+  padding-top: 5vw;
+}
+
+.QBOHead {
+  padding-top: 40px;
+  margin-bottom: 40px;
+  position: sticky;
+  top: -60px;
+  z-index: 1;
+  background: #fff;
+}
+.QBOHead h1 {
+  font-family: avenirDemi;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+.QBOHead h1 span {
+  margin-right: 10px;
+}
+
+.SideNav {
+  position: sticky;
+  top: 0;
+  background: #282828;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 220px;
+  box-sizing: border-box;
+}
+.SideNav img {
+  cursor: pointer;
+}
+
+.dashboard {
+  margin-bottom: 30px;
+  animation: showup 3s cubic-bezier(0.38, 0.01, 0, 1.01) forwards;
+  opacity: 0;
+  transform: translateY(10px);
 }/*# sourceMappingURL=index.css.map */

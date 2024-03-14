@@ -9,7 +9,7 @@ import NavButton from "./NavButton"
 const AboutYou = () => {
     const defaultPhone = "+44 7598 863677"
     const defaultDob = "06/27/1985"
-    const defaultSSN = "1234"
+    const defaultSSN = "8967"
     const defaultState = 4
     const [userPhone,setUserPhone] = useLocalstorageState("userPhone",defaultPhone)
     const [selectedCompany,setSelectedCompany] = useLocalstorageState("selectedCompany",null)
