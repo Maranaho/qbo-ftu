@@ -22,7 +22,7 @@ const AboutYou = () => {
     const [firstName,setFirstName] = useLocalstorageState("firstName",selectedCompany.director.split(" ")[0])
     const [lastName,setLastName] = useLocalstorageState("lastName",selectedCompany.director.split(" ")[1])
     const [city,setCity] = useLocalstorageState("city",metaZip.address.split(",")[1])
-    const [zips,setZips] = useLocalstorageState("zips",metaZip)
+    const [zips,setZips] = useLocalstorageState("zips",metaZip.zip)
 
     const handleChange = (val,key)=> {
         const tmpCompany = {...selectedCompany}
@@ -93,7 +93,7 @@ const AboutYou = () => {
                     onChange={e=>setCity(e.target.value)}
                 />
                 <DropDown
-                    label="Industry"
+                    label="State"
                     options={usStates}
                     onChange={selectedState=>setCurrentState(selectedState)}
                     selected={currentState}

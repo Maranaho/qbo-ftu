@@ -1,27 +1,30 @@
-import NavButton from "./NavButton"
-import bringyourmoney from "../assets/png/bringyourmoney.png"
-import confetti from "../assets/rive/confetti.riv"
+import NavButton from './NavButton'
+import moneyin from "../assets/svg/moneyin.svg"
+import stashtext from "../assets/svg/stashtext.svg"
 
-const BringYourMoney = () => {
-
-
+const BringMoney = () => {
     return (
-        <div className="BringYourMoney">
-            <img src={bringyourmoney}/>
-            <div className="btnCtn">
-                <NavButton
-                    label="Bring in money"
-                    url="/qbo"
-                />
-                <NavButton
-                    variant="link"
-                    label="I'll do it later"
-                    url="/qbo"
-                />
+        <div className="TrackMoney BringMoney Survey">
+            <div>
+                <img src={stashtext} />
+                <div className="btnCtn">
+                    <NavButton
+                        label="Bring in money"
+                        url="/qbo"
+                    />
+                    <NavButton
+                        variant="link"
+                        label="I'll do it later"
+                        url="/qbo"
+                    />
+                </div>
             </div>
-    
+            <div className="trackImg">
+                <img src={moneyin} />
+            </div>
+           
         </div>
     )
 }
  
-export default BringYourMoney
+export default BringMoney

@@ -76,12 +76,13 @@ p {margin: 0}
   display: flex;
   align-items: center;
   font-size: .9em;
-  &:not(:disabled){
+  &:not(:disabled):not(.link){
     &:hover{ background: $qbHover}
     &:active{ background: $qbActive}
   }
   > img { margin-right: $btnSpacing}
   &.secondary{
+      color: $txt;
       background: $secondaryBtnBG;
       border: 1px solid $secondaryBtnStroke;
       &:hover{ background: $secondaryBtnHover}
@@ -526,6 +527,7 @@ p {margin: 0}
   }
 }
 
+.Radio,
 .Checkbox {
   display: flex;
   padding: 10px 0;
@@ -571,6 +573,19 @@ p {margin: 0}
       left: 5px;
     }
   }
+}
+
+.Radio {
+  label{
+    &:before,
+    &:after {
+      border-radius: 20px;
+    }
+  }
+}
+
+.RadioGroup {
+  padding: 30px 0;
 }
 
 .DetailForm {
@@ -884,4 +899,43 @@ p {margin: 0}
     background: #E9F5EC;
     border-color: $qb;
   }
+}
+
+.Ownership,
+.SourceOfIncome,
+.TrackMoney {
+
+  .trackImg {
+    display: flex;
+  }
+  .btnCtn {
+    display: flex;
+    .btn { margin-right: 10px}
+  }
+}
+
+.BringMoney {
+  display: flex;
+  align-items: center;
+  .trackImg {margin-left: 50px}
+  .btnCtn{ margin-top: 40px}
+}
+
+.Owners {
+  grid-template-columns: repeat(4,1fr);
+  .Tile {
+    img, .riveComponent {
+      margin: 0 0 10px 0;
+      width: 65px;
+      height: 65px;
+    }
+    > div {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+  }
+}
+
+.MainIncomeSource {
+  margin-bottom: 30px;
 }

@@ -7,8 +7,9 @@ import { useLocalstorageState } from "rooks"
 
 const AboutYourBusiness = () => {
     const [selectedCompany,setSelectedCompany] = useLocalstorageState("selectedCompany",null)
+    const defaultZip = meta.zipcode[selectedCompany.zip].zip
     const [businessAddress,setBusinessAddress] = useLocalstorageState("businessAddress",meta.zipcode[selectedCompany.zip].address)
-    const [zips,setZips] = useLocalstorageState("zips",meta.zipcode[selectedCompany.zip].zip)
+    const [zips,setZips] = useLocalstorageState("zips",defaultZip)
         const handleChange = (val,key)=> {
             const tmpCompany = {...selectedCompany}
             tmpCompany[key] = val

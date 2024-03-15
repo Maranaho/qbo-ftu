@@ -4,6 +4,9 @@ import {
   } from "react-router-dom"
   import Welcome from './Welcome'
   import FindCompany from './FindCompany'
+  import TrackMoney from './TrackMoney'
+  import Ownership from './Ownership'
+  import SourceOfIncome from './SourceOfIncome'
   import DetailForm from './DetailForm'
   import GreetingUser from './GreetingUser'
   import Approved from './Approved'
@@ -13,7 +16,11 @@ import {
   const Proto = ()=>(
     <Routes>
       <Route path="/" element={<Welcome/>}/>
-      <Route path="/fond-your-company" element={<FindCompany/>}/>
+      <Route path="/reasons" element={<Welcome/>}/>
+      <Route path="/track-money" element={<TrackMoney/>}/>
+      <Route path="/ownership" element={<Ownership/>}/>
+      <Route path="/source-of-income" element={<SourceOfIncome/>}/>
+      <Route path="/find-your-company" element={<FindCompany/>}/>
       <Route path="/greeting/:user" element={<GreetingUser/>}/>
       <Route path="/review-company-details" element={<DetailForm/>}/>
       <Route path="/approved" element={<Approved/>}/>

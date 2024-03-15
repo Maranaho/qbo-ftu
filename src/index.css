@@ -61,16 +61,17 @@ p {
   color: #fff;
   text-decoration: none;
 }
-.btn:not(:disabled):hover {
+.btn:not(:disabled):not(.link):hover {
   background: rgb(40, 146, 24);
 }
-.btn:not(:disabled):active {
+.btn:not(:disabled):not(.link):active {
   background: rgb(34, 129, 20);
 }
 .btn > img {
   margin-right: 10px;
 }
 .btn.secondary {
+  color: #393B3D;
   background: rgba(255, 255, 255, 0);
   border: 1px solid #5A5A5A;
 }
@@ -527,19 +528,23 @@ p {
   background: #2D9E1C;
 }
 
+.Radio,
 .Checkbox {
   display: flex;
   padding: 10px 0;
 }
+.Radio input,
 .Checkbox input {
   visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
 }
+.Radio input:checked + label:after,
 .Checkbox input:checked + label:after {
   display: block;
 }
+.Radio label,
 .Checkbox label {
   font-family: avenirRegular;
   font-size: 0.8em;
@@ -552,6 +557,7 @@ p {
   position: relative;
   cursor: pointer;
 }
+.Radio label:before,
 .Checkbox label:before {
   content: "";
   margin-right: 10px;
@@ -561,6 +567,7 @@ p {
   border-radius: 4px;
   border: 1px solid #c3c3c3;
 }
+.Radio label:after,
 .Checkbox label:after {
   content: "";
   display: none;
@@ -571,6 +578,14 @@ p {
   position: absolute;
   top: 5px;
   left: 5px;
+}
+
+.Radio label:before, .Radio label:after {
+  border-radius: 20px;
+}
+
+.RadioGroup {
+  padding: 30px 0;
 }
 
 .DetailForm {
@@ -901,4 +916,48 @@ p {
 .Tile.selected {
   background: #E9F5EC;
   border-color: #2D9E1C;
+}
+
+.Ownership .trackImg,
+.SourceOfIncome .trackImg,
+.TrackMoney .trackImg {
+  display: flex;
+}
+.Ownership .btnCtn,
+.SourceOfIncome .btnCtn,
+.TrackMoney .btnCtn {
+  display: flex;
+}
+.Ownership .btnCtn .btn,
+.SourceOfIncome .btnCtn .btn,
+.TrackMoney .btnCtn .btn {
+  margin-right: 10px;
+}
+
+.BringMoney {
+  display: flex;
+  align-items: center;
+}
+.BringMoney .trackImg {
+  margin-left: 50px;
+}
+.BringMoney .btnCtn {
+  margin-top: 40px;
+}
+
+.Owners {
+  grid-template-columns: repeat(4, 1fr);
+}
+.Owners .Tile img, .Owners .Tile .riveComponent {
+  margin: 0 0 10px 0;
+  width: 65px;
+  height: 65px;
+}
+.Owners .Tile > div {
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.MainIncomeSource {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=index.css.map */
