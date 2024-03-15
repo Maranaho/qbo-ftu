@@ -960,4 +960,114 @@ p {
 
 .MainIncomeSource {
   margin-bottom: 30px;
+}
+
+footer {
+  background: #3A3A3D;
+  text-align: center;
+  width: 100vw;
+}
+footer img {
+  cursor: pointer;
+}
+
+.Signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.FormCtn {
+  display: flex;
+  height: calc(100vh - 360px);
+  width: 900px;
+  margin: 40px 0;
+  border: 1px solid #e2e2e2;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 0.07);
+  justify-content: space-between;
+  position: relative;
+}
+.FormCtn .Loading {
+  position: static;
+  padding: 5vw 30px;
+  flex: 1;
+}
+.FormCtn .SigninForm,
+.FormCtn .QBMoneyAdd {
+  flex: 1;
+  box-sizing: border-box;
+  margin: 20px 0;
+  padding: 0 30px;
+}
+.FormCtn .SigninForm {
+  display: flex;
+  flex-direction: column;
+}
+.FormCtn .SigninForm h1 {
+  font-family: avenirDemi;
+  font-size: 1.5em;
+  margin: 0 0 15px 0;
+}
+.FormCtn .SigninForm h1 ~ p {
+  font-size: 0.9em;
+  margin-bottom: 7px;
+}
+.FormCtn .SigninForm h1, .FormCtn .SigninForm p, .FormCtn .SigninForm small {
+  text-align: center;
+}
+.FormCtn .SigninForm small {
+  display: block;
+}
+.FormCtn .SigninForm .formFooter {
+  padding-top: 20px;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.FormCtn .SigninForm .formFooter p {
+  font-size: 0.8em;
+}
+.FormCtn .SigninForm .formFooter small {
+  font-size: 0.6em;
+}
+
+.QBMoneyAdd {
+  border-left: 1px solid #e2e2e2;
+}
+.QBMoneyAdd img {
+  width: 350px;
+}
+.QBMoneyAdd h2 {
+  font-family: avenirDemi;
+  font-size: 1.1em;
+  margin: 0;
+}
+.QBMoneyAdd .qbMoney {
+  padding: 30px 20px;
+}
+.QBMoneyAdd ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+.QBMoneyAdd ul li {
+  font-family: avenirMedium;
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+.QBMoneyAdd p {
+  font-size: 0.7em;
+  opacity: 0.5;
+  padding: 10px 0;
+}
+.QBMoneyAdd p:nth-of-type(3) {
+  padding-top: 0;
 }/*# sourceMappingURL=index.css.map */

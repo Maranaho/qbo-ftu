@@ -12,10 +12,11 @@ import {
   import Approved from './Approved'
   import BringYourMoney from './BringYourMoney'
   import QBO from './QBO'
+  import Signin from './Signin'
   
   const Proto = ()=>(
     <Routes>
-      <Route path="/" element={<Welcome/>}/>
+      <Route path="/" element={<Signin/>}/>
       <Route path="/reasons" element={<Welcome/>}/>
       <Route path="/track-money" element={<TrackMoney/>}/>
       <Route path="/ownership" element={<Ownership/>}/>

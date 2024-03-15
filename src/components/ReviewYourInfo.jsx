@@ -14,7 +14,6 @@ const ReviewYourInfo = () => {
     const [editable,setEditable] = useState(false)
 
     const handleKeyDown = e =>{
-        console.log(e.key);
         if(e.key === "Enter")setEditable(false)
     }
 

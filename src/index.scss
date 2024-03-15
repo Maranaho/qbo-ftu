@@ -939,3 +939,100 @@ p {margin: 0}
 .MainIncomeSource {
   margin-bottom: 30px;
 }
+
+footer {
+  background: #3A3A3D;
+  text-align: center;
+  width: 100vw;
+  img {cursor: pointer}
+}
+
+.Signin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+
+.FormCtn {
+  display: flex;
+  height: calc(100vh - (360px));
+  width: 900px;
+  margin: 40px 0;
+  border: 1px solid #e2e2e2;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 7px 12px 0 rgba(0,0,0,.07);
+  justify-content: space-between;
+  position: relative;
+
+  .Loading {
+    position: static;
+    padding: 5vw 30px;
+    flex: 1;
+  }
+  
+  .SigninForm,
+  .QBMoneyAdd {
+    flex: 1;
+    box-sizing: border-box;
+    margin: 20px 0;
+    padding: 0 30px;
+  }
+  .SigninForm {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-family: avenirDemi;
+      font-size: 1.5em;
+      margin: 0 0 15px 0;
+      &~ p {
+        font-size: .9em;
+        margin-bottom: 7px;
+      }
+    }
+    h1,p,small {text-align: center}
+    small { display: block}
+    .formFooter {
+      padding-top: 20px;
+      box-sizing: border-box;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      p { font-size: .8em }
+      small { font-size: .6em }
+    }
+  }
+}
+
+.QBMoneyAdd {
+  border-left: 1px solid #e2e2e2;
+  img { width: 350px}
+  h2 {
+    font-family: avenirDemi;
+    font-size: 1.1em;
+    margin: 0;
+  }
+  .qbMoney { padding: 30px 20px}
+  ul {
+    padding-left: 20px;
+    margin: 10px 0;
+    li {
+      font-family: avenirMedium;
+      font-size: .9em;
+      padding: 5px 0;
+    }
+  }
+  p {
+    font-size: .7em;
+    opacity: .5;
+    padding: 10px 0;
+    &:nth-of-type(3) {padding-top: 0}
+  }
+}
