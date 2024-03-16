@@ -3,7 +3,6 @@ body {
   margin: 0;
   color: #393B3D;
   font-weight: 400;
-  font-size: 14px;
   font-family: avenirRegular;
   font-size: 17px;
   overscroll-behavior: none;
@@ -1089,4 +1088,84 @@ footer img {
 }
 .marketingBody > img {
   cursor: pointer;
+}
+
+.Auth {
+  height: 100vh;
+  position: relative;
+  background: #eaf6f5;
+}
+.Auth .qblogo {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  padding: 4px 20px;
+  z-index: 4;
+  width: 100vw;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(211, 232, 232, 0.4117647059);
+}
+.Auth .qblogo span {
+  font-family: avenirMedium;
+  font-size: 1em;
+}
+.Auth .qblogo img {
+  margin-right: 7px;
+}
+.Auth input {
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid #c6d9d9;
+  padding: 15px 20px;
+  width: 200px;
+  border-radius: 100px;
+  outline: none;
+  font-family: avenirRegular;
+  font-size: 0.9em;
+  margin: 40px 0 10px;
+}
+.Auth input::-moz-placeholder {
+  color: #92a0a0;
+}
+.Auth input::placeholder {
+  color: #92a0a0;
+}
+.Auth input:hover {
+  border-color: #b8cdcd;
+}
+.Auth input:focus {
+  border-color: #00bb4e;
+}
+.Auth .AuthPass header {
+  width: 440px;
+  position: absolute;
+  top: 22vh;
+  left: 22vw;
+}
+.Auth .AuthPass header .bubble {
+  background: #00be5f;
+  border-color: #00be5f;
+  padding: 15px 50px;
+}
+.Auth .AuthPass header .bubble:disabled {
+  opacity: 1;
+}
+.Auth .AuthPass header .bubble:hover {
+  background: #00b75b;
+  border-color: #00b75b;
+}
+.Auth .AuthPass header h1 {
+  font-family: avenirBold;
+  font-size: 4.3em;
+  line-height: 1em;
+  margin: 0;
+}
+.Auth .AuthPass header p {
+  font-family: avenirMedium;
+  font-size: 1.4em;
+  padding: 20px 0;
+  width: 400px;
 }/*# sourceMappingURL=index.css.map */

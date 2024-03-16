@@ -14,10 +14,12 @@ import {
   import QBO from './QBO'
   import Signin from './Signin'
   import Marketing from './Marketing'
+  import Auth from './Auth'
   
   const Proto = ()=>(
     <Routes>
-      <Route path="/" element={<Marketing/>}/>
+      <Route path="/" element={<Auth/>}/>
+      <Route path="/marketing" element={<Marketing/>}/>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/reasons" element={<Welcome/>}/>
       <Route path="/track-money" element={<TrackMoney/>}/>

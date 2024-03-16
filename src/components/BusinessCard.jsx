@@ -6,7 +6,6 @@ const BusinessCard = ({x}) => {
     const adjustforMidView = 10
     const angle = ((x / window.innerWidth * 360) * coef) - adjustforMidView
     const [selectedCompany] = useLocalstorageState("selectedCompany",null)
-    const companyName = selectedCompany ? selectedCompany.name + " " + meta.types[selectedCompany.companyType] : null
     return (
         <div
             className="BusinessCard"

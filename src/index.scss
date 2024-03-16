@@ -31,7 +31,6 @@ body {
   margin: 0;
   color: $txt;
   font-weight: 400;
-  font-size: 14px;
   font-family: avenirRegular;
   font-size: $fontSize;
   overscroll-behavior: none;
@@ -1040,7 +1039,7 @@ footer {
 .Marketing {
   text-align: center;
   font-size: 0;
-
+  
   header {
     background: url("./assets/png/headerbg.png");
     height: 142px;
@@ -1053,4 +1052,76 @@ footer {
 .marketingBody {
   > img { cursor: pointer }
   background: url("./assets/png/marketingbg.png") repeat-x;
+}
+
+
+.Auth {
+  height: 100vh;
+  position: relative;
+  background: #eaf6f5;
+
+  .qblogo {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 4px 20px;
+    z-index: 4;
+    width: 100vw;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,.3);
+    border-bottom: 1px solid #d3e8e869;
+    span {
+      font-family: avenirMedium;
+      font-size: 1em;
+    }
+    img {margin-right: 7px}
+  }
+  input {
+    background: rgba(255,255,255,0);
+    border: 1px solid #c6d9d9;
+    padding: 15px 20px;
+    width: 200px;
+    border-radius: 100px;
+    outline: none;
+    font-family: avenirRegular;
+    font-size: .9em;
+    margin: 40px 0 10px;
+    &::placeholder{color: #92a0a0}
+    &:hover {  border-color: #b8cdcd}
+    &:focus {border-color: #00bb4e}
+  }
+  .AuthPass {
+    header {
+      width: 440px;
+      position: absolute;
+      top: 22vh;
+      left: 22vw;
+      .bubble {
+        background: #00be5f;
+        border-color: #00be5f;
+        padding: 15px 50px;
+        &:disabled{opacity: 1}
+        &:hover {
+          background: #00b75b;
+          border-color: #00b75b;
+        }
+      }
+      h1 {
+        font-family: avenirBold;
+        font-size: 4.3em;
+        line-height: 1em;
+        margin: 0;
+      }
+      p {
+        font-family: avenirMedium;
+        font-size: 1.4em;
+        padding: 20px 0;
+        // opacity: .7;
+        width: 400px;
+      }
+    }
+  }
 }
