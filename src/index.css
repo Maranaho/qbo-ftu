@@ -1070,4 +1070,18 @@ footer img {
 }
 .QBMoneyAdd p:nth-of-type(3) {
   padding-top: 0;
+}
+
+.Marketing {
+  text-align: center;
+}
+.Marketing header {
+  background: url("./assets/png/headerbg.png");
+  height: 142px;
+  border-bottom: 1px solid #f2f1ef;
+  position: sticky;
+  top: 0;
+}
+.Marketing > img {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

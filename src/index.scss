@@ -1036,3 +1036,15 @@ footer {
     &:nth-of-type(3) {padding-top: 0}
   }
 }
+
+.Marketing {
+  text-align: center;
+  header {
+    background: url("./assets/png/headerbg.png");
+    height: 142px;
+    border-bottom: 1px solid #f2f1ef;
+    position: sticky;
+    top:0;
+  }
+  > img { cursor: pointer;}
+}
