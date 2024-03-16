@@ -1039,6 +1039,8 @@ footer {
 
 .Marketing {
   text-align: center;
+  font-size: 0;
+
   header {
     background: url("./assets/png/headerbg.png");
     height: 142px;
@@ -1046,5 +1048,9 @@ footer {
     position: sticky;
     top:0;
   }
-  > img { cursor: pointer;}
+}
+
+.marketingBody {
+  > img { cursor: pointer }
+  background: url("./assets/png/marketingbg.png") repeat-x;
 }

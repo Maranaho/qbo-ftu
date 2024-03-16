@@ -30,7 +30,11 @@ const Marketing = () => {
     return (
         <div className="Marketing">
             <header><img src={marketingheader} /></header>
-            <img src={marketing} onClick={handleNavigate}/>
+            <div
+              className="marketingBody"
+              onClick={handleNavigate}>
+              <img src={marketing}/>
+            </div>
             <footer><img src={footer} /></footer>
         </div>
     )
