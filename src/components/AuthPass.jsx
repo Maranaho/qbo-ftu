@@ -10,12 +10,23 @@ const AuthPass = () => {
     return (
         <div className="AuthPass">
             <div className="qblogo">
-                <img src={qblogo}/>
-                <span>QBDT</span>
+                <div>
+                    <img src={qblogo}/>
+                    <span>QBDT</span>
+                </div>
+                <div>
+                    <span>Maranaho N'Guessan</span>
+                    <a
+                        className="btn dark mini"
+                        href="https://github.com/Maranaho/qbo-ftu"
+                        target="_blank"
+                    >Repo</a>
+                </div>
             </div>
             <header>
                 <h1>QBO FTU <br/> user testing</h1>
-                <p>Je sais pas encore quoi ecrire mais ca va venir j'espere</p>
+                <p>Thank you for helping us test QuickBooks Online First Time Use experience.</p>
+                <p>Sign up for QuickBooks and arrive at your Dashboard.</p>
                 <input
                     type="password"
                     placeholder="Password..."

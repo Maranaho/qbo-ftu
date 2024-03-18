@@ -1,5 +1,4 @@
 import { useLocalstorageState } from "rooks"
-import meta from "../data/meta.json"
 
 const BusinessCard = ({x}) => {
     const coef = .09

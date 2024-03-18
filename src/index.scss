@@ -10,8 +10,8 @@ $greyTxt: #b6b6b6;
 //Buttons
 $secondaryBtnStroke: #5A5A5A;
 $secondaryBtnBG: rgba(255,255,255,0);
-$secondaryBtnHover: rgba(255,255,255,.07);
-$secondaryBtnActive: rgba(255,255,255,.1);
+$secondaryBtnHover: rgba(0,0,0,.05);
+$secondaryBtnActive: rgba(0,0,0,.1);
 $btnRadius: 50px;
 $btnSpacing: 10px;
 
@@ -31,7 +31,7 @@ body {
   margin: 0;
   color: $txt;
   font-weight: 400;
-  font-family: avenirRegular;
+  font-family: avenirRegular, sans-serif;
   font-size: $fontSize;
   overscroll-behavior: none;
 }
@@ -60,6 +60,7 @@ p {margin: 0}
   color: #fff;
   display: flex;
   justify-content: center;
+  text-decoration: none;
   &:disabled{
     opacity: .3;
     cursor: not-allowed;
@@ -80,12 +81,28 @@ p {margin: 0}
     &:active{ background: $qbActive}
   }
   > img { margin-right: $btnSpacing}
-  &.secondary{
-      color: $txt;
-      background: $secondaryBtnBG;
-      border: 1px solid $secondaryBtnStroke;
-      &:hover{ background: $secondaryBtnHover}
-      &:active{ background:$secondaryBtnActive}
+  &:not(:disabled):not(.link){
+    &.secondary{
+        color: $txt;
+        background: $secondaryBtnBG;
+        border: 1px solid $secondaryBtnStroke;
+        &:hover{ background: $secondaryBtnHover}
+        &:active{ background:$secondaryBtnActive}
+    }
+  }
+  &.dark{
+      color: #fff;
+      background: $txt;
+      border: 1px solid $txt;
+      &:hover{
+        background: $txt !important;
+        opacity: .9;
+      }
+      &:active{ background:$txt;}
+  }
+  &.mini {
+    padding: 5px 20px;
+    font-size: .7em;
   }
 }
 
@@ -1064,20 +1081,31 @@ footer {
     position: absolute;
     top: 0px;
     left: 0;
-    padding: 4px 20px;
+    padding: 4px 22vw;
     z-index: 4;
     width: 100vw;
     height: 50px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    background: rgba(255,255,255,.3);
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      &:nth-of-type(2){
+        span {
+          font-size: .7em;
+          margin-right: 10px;
+        }
+      }
+    }
+    // background: rgba(255,255,255,.3);
     border-bottom: 1px solid #d3e8e869;
     span {
       font-family: avenirMedium;
       font-size: 1em;
     }
-    img {margin-right: 7px}
+    img {margin-right: 5px}
   }
   input {
     background: rgba(255,255,255,0);
@@ -1097,7 +1125,7 @@ footer {
     header {
       width: 440px;
       position: absolute;
-      top: 22vh;
+      top: 15vh;
       left: 22vw;
       .bubble {
         background: #00be5f;
@@ -1113,14 +1141,14 @@ footer {
         font-family: avenirBold;
         font-size: 4.3em;
         line-height: 1em;
-        margin: 0;
+        margin: 0 0 40px 0;
       }
       p {
         font-family: avenirMedium;
         font-size: 1.4em;
-        padding: 20px 0;
+        padding-bottom: 15px;
         // opacity: .7;
-        width: 400px;
+        width: 450px;
       }
     }
   }

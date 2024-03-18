@@ -15,23 +15,35 @@ import {
   import Signin from './Signin'
   import Marketing from './Marketing'
   import Auth from './Auth'
+
+  const routes = {
+    "/": <Auth />,
+    "/marketing": <Marketing />,
+    "/signin": <Signin />,
+    "/reasons": <Welcome />,
+    "/track-money": <TrackMoney />,
+    "/ownership": <Ownership />,
+    "/source-of-income": <SourceOfIncome />,
+    "/find-your-company": <FindCompany />,
+    "/greeting/:user": <GreetingUser />,
+    "/review-company-details": <DetailForm />,
+    "/approved": <Approved />,
+    "/bring-your-money": <BringYourMoney />,
+    "/qbo": <QBO />,
+    "*": <p>404</p>
+  }
+  
   
   const Proto = ()=>(
     <Routes>
-      <Route path="/" element={<Auth/>}/>
-      <Route path="/marketing" element={<Marketing/>}/>
-      <Route path="/signin" element={<Signin/>}/>
-      <Route path="/reasons" element={<Welcome/>}/>
-      <Route path="/track-money" element={<TrackMoney/>}/>
-      <Route path="/ownership" element={<Ownership/>}/>
-      <Route path="/source-of-income" element={<SourceOfIncome/>}/>
-      <Route path="/find-your-company" element={<FindCompany/>}/>
-      <Route path="/greeting/:user" element={<GreetingUser/>}/>
-      <Route path="/review-company-details" element={<DetailForm/>}/>
-      <Route path="/approved" element={<Approved/>}/>
-      <Route path="/bring-your-money" element={<BringYourMoney/>}/>
-      <Route path="/qbo" element={<QBO/>}/>
-      <Route path='*' element={<p>404</p>} />
+      {Object.entries(routes).map(([path, Component]) => (
+        <Route
+          key={path}
+          path={path}
+          element={Component}
+        />
+      ))}
     </Routes>
+
   )
     export default Proto
