@@ -1,5 +1,6 @@
+import { useQBOState } from '../context'
 import { useEffect } from "react"
-import { useQBOState } from '../context.jsx'
+import { useLocation } from "react-router-dom"
 import { companies,meta } from "../data/companiesData.js"
 import SearchHead from "./SearchHead.jsx"
 import ListCompanies from "./ListCompanies.jsx"
@@ -7,8 +8,10 @@ import NoResult from "./NoResult.jsx"
 import LoadingCompanies from "./LoadingCompanies.jsx"
 
 const FindCompany = () => {
-
+    
     const { state:{ searchValue,listLength,loadingCompanies },dispatch } = useQBOState()
+    const location = useLocation()
+    useEffect(()=>dispatch({type:"UPDATE_PROGRESS",payload:location.pathname}),[])
 
     const filteredCompany = company =>{
         const { name,director,zip:post,companyNumber } = company

@@ -1,4 +1,7 @@
 import { useLocalstorageState } from "rooks"
+import { useQBOState } from '../context'
+import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import NavButton from "./NavButton"
 import MainIncomeSource from './MainIncomeSource'
 const defaultIncomeSource = [
@@ -7,8 +10,12 @@ const defaultIncomeSource = [
 ]
 
 const SourceOfIncome = () => {
- 
+    
     const [mainIncomeSrc] = useLocalstorageState("mainIncomeSrc",defaultIncomeSource)
+    const location = useLocation()
+    const {dispatch } = useQBOState()
+    useEffect(()=>dispatch({type:"UPDATE_PROGRESS",payload:location.pathname}),[])
+    
     return (
         <div className="Survey SourceOfIncome">
             <h1>Is this business your main source of income?</h1>

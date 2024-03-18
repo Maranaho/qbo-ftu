@@ -34,7 +34,7 @@ import {
   }
   
   
-  const Proto = ()=>(
+  const Proto = ()=> (
     <Routes>
       {Object.entries(routes).map(([path, Component]) => (
         <Route
@@ -44,6 +44,5 @@ import {
         />
       ))}
     </Routes>
-
   )
     export default Proto

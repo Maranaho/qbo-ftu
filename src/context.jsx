@@ -9,13 +9,30 @@ let initialQBOState = {
   fetchingDetails: false,
   loadingCompanies: false,
   access: "netflix&&naho",
-  opens:[]
+  opens:[],
+  routeArray: [
+    "/reasons",
+    "/track-money",
+    "/ownership",
+    "/source-of-income",
+    "/find-your-company",
+    "/review-company-details",
+    "/approved",
+    "/bring-your-money",
+  ],
+  routeProgress:null,
 }
 
 const QBOContext = React.createContext()
 
 function qboReducer(state, action) {
   switch (action.type) {
+
+    case 'UPDATE_PROGRESS': {
+      let UPDATE_PROGRESS = {...state}
+      UPDATE_PROGRESS.routeProgress = action.payload
+      return UPDATE_PROGRESS
+    }
 
     case 'OPENS': {
       let OPENS = {...state}

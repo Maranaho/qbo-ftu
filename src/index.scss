@@ -521,7 +521,7 @@ p {margin: 0}
     position: absolute;
     top: 70px;
     left: 5px;
-    z-index: 2;
+    z-index: 3;
     width: calc(100% - 10px);
     background: #fff;
     outline: 0;
@@ -986,7 +986,7 @@ footer {
   box-shadow: 0 7px 12px 0 rgba(0,0,0,.07);
   justify-content: space-between;
   position: relative;
-
+  overflow: hidden;
   .Loading {
     position: static;
     padding: 5vw 30px;
@@ -1151,5 +1151,19 @@ footer {
         width: 450px;
       }
     }
+  }
+}
+
+.Progress {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  height: 1px;
+  background: #F8F8F8;
+  > div {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#16EFCB,#26D013);
+    transition: 1s $ease;
   }
 }

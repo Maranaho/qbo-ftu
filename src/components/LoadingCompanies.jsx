@@ -1,4 +1,3 @@
-
 import load from "../assets/svg/load.svg"
 
 const LoadingCompanies = () => {
