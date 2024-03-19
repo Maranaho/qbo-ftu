@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom"
+import { HashRouter as Router } from "react-router-dom"
 import { useQBOState } from './context.jsx'
 import Loading from "./components/Loading.jsx"
 import FetchingDetails from "./components/FetchingDetails.jsx"
@@ -9,12 +9,12 @@ const App = ()=>{
   
   const { state:{ loading,fetchingDetails,routeProgress } } = useQBOState()
   return (
-    <BrowserRouter>
+    <Router>
       {routeProgress && routeProgress !== "/qbo" &&<Progress />}
       <Proto />
       {loading&&<Loading/>}
       {fetchingDetails&&<FetchingDetails/>}
-    </BrowserRouter>
+    </Router>
   )
 }
 
