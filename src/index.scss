@@ -224,7 +224,7 @@ p {margin: 0}
   background: #fff;
   position: sticky;
   z-index: 1;
-  top: 0;
+  top: 3px;
   h2 {
     opacity: 0;
     animation: fadeIn 1s ease forwards .2s;
@@ -272,7 +272,8 @@ p {margin: 0}
   border-radius: 100px;
   transition: .2s ease;
   &:hover { border-color: #b1b1b1}
-  &.focus { border-color: #64a7f6}
+  // &.focus { border-color: #64a7f6}
+  &.focus { border-color: $qb}
   button {
     background: none;
     border: none;
@@ -371,6 +372,7 @@ p {margin: 0}
   }
 }
 
+
 .Field {
   display: flex;
   flex-direction: column;
@@ -378,12 +380,11 @@ p {margin: 0}
   font-size: .8em;
   padding: 10px 0;
   position: relative;
+  label { opacity: .6 }
   .showPassBtn{
     top: 37px;
     img {width: 19px}
   }
-  label { opacity: .6 }
-
   input {
     font-family: avenirRegular;
     padding: 7px;
@@ -1081,7 +1082,7 @@ footer {
     position: absolute;
     top: 0px;
     left: 0;
-    padding: 4px 22vw;
+    padding: 4px 20vw;
     z-index: 4;
     width: 100vw;
     height: 50px;
@@ -1116,7 +1117,6 @@ footer {
     outline: none;
     font-family: avenirRegular;
     font-size: .9em;
-    margin: 40px 0 10px;
     &::placeholder{color: #92a0a0}
     &:hover {  border-color: #b8cdcd}
     &:focus {border-color: #00bb4e}
@@ -1126,7 +1126,7 @@ footer {
       width: 440px;
       position: absolute;
       top: 15vh;
-      left: 22vw;
+      left: 20vw;
       .bubble {
         background: #00be5f;
         border-color: #00be5f;
@@ -1137,6 +1137,16 @@ footer {
           border-color: #00b75b;
         }
       }
+      .showPassBtn {
+        right: inherit;
+        left: 200px;
+        top: 15px;
+        opacity: .3;
+      }
+      .inputCtn { 
+        position: relative;
+        margin: 40px 0 10px;
+       }
       h1 {
         font-family: avenirBold;
         font-size: 4.3em;
@@ -1145,10 +1155,10 @@ footer {
       }
       p {
         font-family: avenirMedium;
-        font-size: 1.4em;
+        font-size: 1.2em;
         padding-bottom: 15px;
         // opacity: .7;
-        width: 450px;
+        width: 388px;
       }
     }
   }
@@ -1158,12 +1168,27 @@ footer {
   position: sticky;
   z-index: 3;
   top: 0;
-  height: 1px;
-  background: #F8F8F8;
+  background: #fff;
+  > span {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: .8em;
+    font-family: avenirDemi;
+    opacity: .4;
+    > span:first-child{margin-right: 7px}
+  }
   > div {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg,#16EFCB,#26D013);
-    transition: 1s $ease;
+    height: 3px;
+    background: #f8f8f8b9;
+    padding: 0px;
+    margin: 0;
+    border-radius: 0 20px 20px 0;
+    > div {
+      height: 100%;
+      border-radius: 0 20px 20px 0;
+      background: linear-gradient(90deg,#16EFCB,#26D013);
+      transition: 1s $ease;
+    }
   }
 }

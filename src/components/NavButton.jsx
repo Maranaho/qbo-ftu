@@ -11,6 +11,7 @@ const NavButton = ({
     back,
     disabled,
     className,
+    minMax = [400,1800],
     label = "Continue",
     variant = "primary",
   }) =>{
@@ -18,8 +19,8 @@ const NavButton = ({
   const {dispatch } = useQBOState()
   let navigate = useNavigate()
   let timeout
-  const min = 400
-  const max = 1800
+  const min = minMax[0]
+  const max = minMax[1]
 
   const handleNavigate = ()=>{
     if(disabled)return

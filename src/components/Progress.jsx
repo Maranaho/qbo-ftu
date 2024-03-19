@@ -4,9 +4,9 @@ const Progress = () => {
     
     const { state:{ routeArray,routeProgress } } = useQBOState()
     const [progress,setProgress] = useState(0)
+    const idx = routeArray.indexOf(routeProgress) + 1
     const updateProgress = ()=>{
         if(routeProgress){
-            const idx = routeArray.indexOf(routeProgress) + 1
             const percent = Math.round(idx/routeArray.length*100)
             setProgress(percent);
         }
@@ -14,7 +14,17 @@ const Progress = () => {
     useEffect(updateProgress,[routeProgress])
 
     return (
-        <div className="Progress"><div style={{width:`${progress}%`}}/></div>
+        <div className="Progress">
+            <div>
+                <div style={{width:`${progress}%`}}/>
+            </div>
+            <span>
+                <span>Step</span>
+                <span>{idx}</span>
+                <span>/</span>
+                <span>{routeArray.length}</span>
+            </span>
+        </div>
     )
 }
  

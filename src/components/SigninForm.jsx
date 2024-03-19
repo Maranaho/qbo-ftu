@@ -30,10 +30,11 @@ const SigninForm = () => {
             />
             <div className="formFooter">
                 <NavButton
-                    label="One more step"
+                    minMax={[3000,4000]}
+                    label="Create an account"
                     url="/reasons"
                 />
-                <p>By selecting One more step you are agreeing to our <span className="link">Terms</span> and acknowledge our <span className="link">Privacy Statement</span>.</p>
+                <p>By selecting Create an account you are agreeing to our <span className="link">Terms</span> and acknowledge our <span className="link">Privacy Statement</span>.</p>
                 <small>Invisible reCAPTCHA by Google <span className="link">Privacy Policy</span> and <span className="link">Terms of use</span></small>.
             </div>
         </div>
