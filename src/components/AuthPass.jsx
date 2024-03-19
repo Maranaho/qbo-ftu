@@ -1,6 +1,6 @@
 import { useState } from "react"
-import NavButton from "./NavButton"
 import { useQBOState } from '../context.jsx'
+import NavButton from "./NavButton"
 import qblogo from "../assets/svg/qblogo.svg"
 import hideBtn from '../assets/svg/hide.svg'
 import showBtn from '../assets/svg/show.svg'

@@ -1185,7 +1185,7 @@ footer img {
 .Auth .AuthPass header .showPassBtn {
   right: inherit;
   left: 200px;
-  top: 15px;
+  top: 12px;
   opacity: 0.3;
 }
 .Auth .AuthPass header .inputCtn {
