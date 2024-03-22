@@ -1197,8 +1197,8 @@ footer {
 .Auth:not(.AuthSpline) {
   display: flex;
   justify-content: space-between;
-  padding: 0 20vw;
-  padding-top: 9vw;
+  padding: 9vw 20vw 0;
+  box-sizing: border-box;
   header {
     position: static;
     margin-right: 100px;
