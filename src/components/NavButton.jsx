@@ -41,7 +41,7 @@ const NavButton = ({
     variant={variant}
     onClick={url?handleNavigate:cb}
     disabled={disabled}
-    className={`btn ${variant} ${className}`}>
+    className={`NavButton btn ${variant} ${className?className:""}`}>
     {back&&<img src={variant !== "primary" ? chevronLeft : chevronLeftWhite}/>}
     <span>{label}</span>
   </button>
