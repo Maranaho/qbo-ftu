@@ -19,8 +19,7 @@ const NavButton = ({
   const {dispatch } = useQBOState()
   let navigate = useNavigate()
   let timeout
-  const min = minMax[0]
-  const max = minMax[1]
+  const [min,max] = minMax
 
   const handleNavigate = ()=>{
     if(disabled)return

@@ -1,1 +1,0 @@
-export const AccordionChild = ({children}) =><>{children}</>

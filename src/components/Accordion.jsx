@@ -1,8 +1,9 @@
 import { useState,useEffect } from "react"
 import MeasuringPurposes from "./MeasuringPurposes"
-import { AccordionChild } from "./AccordionChild"
 import AccordionRenderedChild from "./AccordionRenderedChild"
 import { useQBOState } from '../context.jsx'
+
+
 
 const AccordionParent = ({children,unlink=false}) => {
     
@@ -36,5 +37,6 @@ const AccordionParent = ({children,unlink=false}) => {
         </section>
     )
 }
- 
+
+const AccordionChild = ({children}) =><>{children}</>
 export { AccordionParent, AccordionChild }
