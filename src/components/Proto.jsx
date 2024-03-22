@@ -14,6 +14,7 @@ import {
   import QBO from './QBO'
   import Signin from './Signin'
   import Marketing from './Marketing'
+  import AuthSpline from './AuthSpline'
   import Auth from './Auth'
 
   const routes = {

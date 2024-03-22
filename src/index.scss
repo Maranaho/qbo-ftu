@@ -1073,10 +1073,11 @@ footer {
 }
 
 
-.Auth {
+.Auth,
+.AuthSpline {
   height: 100vh;
   position: relative;
-  background: #eaf6f5;
+  &.AuthSpline { background: #eaf6f5 }
 
   .qblogo {
     position: absolute;
@@ -1190,5 +1191,20 @@ footer {
       background: linear-gradient(90deg,#16EFCB,#26D013);
       transition: 1s $ease;
     }
+  }
+}
+
+.Auth:not(.AuthSpline) {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20vw;
+  padding-top: 9vw;
+  header {
+    position: static;
+    margin-right: 100px;
+  }
+  > img {
+    width: 588px;
+    height: 525px;
   }
 }

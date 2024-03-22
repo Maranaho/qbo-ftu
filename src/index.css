@@ -1108,12 +1108,17 @@ footer img {
   cursor: pointer;
 }
 
-.Auth {
+.Auth,
+.AuthSpline {
   height: 100vh;
   position: relative;
+}
+.Auth.AuthSpline,
+.AuthSpline.AuthSpline {
   background: #eaf6f5;
 }
-.Auth .qblogo {
+.Auth .qblogo,
+.AuthSpline .qblogo {
   position: absolute;
   top: 0px;
   left: 0;
@@ -1127,22 +1132,27 @@ footer img {
   justify-content: space-between;
   border-bottom: 1px solid rgba(211, 232, 232, 0.4117647059);
 }
-.Auth .qblogo div {
+.Auth .qblogo div,
+.AuthSpline .qblogo div {
   display: flex;
   align-items: center;
 }
-.Auth .qblogo div:nth-of-type(2) span {
+.Auth .qblogo div:nth-of-type(2) span,
+.AuthSpline .qblogo div:nth-of-type(2) span {
   font-size: 0.7em;
   margin-right: 10px;
 }
-.Auth .qblogo span {
+.Auth .qblogo span,
+.AuthSpline .qblogo span {
   font-family: avenirMedium;
   font-size: 1em;
 }
-.Auth .qblogo img {
+.Auth .qblogo img,
+.AuthSpline .qblogo img {
   margin-right: 5px;
 }
-.Auth input {
+.Auth input,
+.AuthSpline input {
   background: rgba(255, 255, 255, 0);
   border: 1px solid #c6d9d9;
   padding: 15px 20px;
@@ -1152,53 +1162,64 @@ footer img {
   font-family: avenirRegular;
   font-size: 0.9em;
 }
-.Auth input::-moz-placeholder {
+.Auth input::-moz-placeholder, .AuthSpline input::-moz-placeholder {
   color: #92a0a0;
 }
-.Auth input::placeholder {
+.Auth input::placeholder,
+.AuthSpline input::placeholder {
   color: #92a0a0;
 }
-.Auth input:hover {
+.Auth input:hover,
+.AuthSpline input:hover {
   border-color: #b8cdcd;
 }
-.Auth input:focus {
+.Auth input:focus,
+.AuthSpline input:focus {
   border-color: #00bb4e;
 }
-.Auth .AuthPass header {
+.Auth .AuthPass header,
+.AuthSpline .AuthPass header {
   width: 440px;
   position: absolute;
   top: 15vh;
   left: 20vw;
 }
-.Auth .AuthPass header .bubble {
+.Auth .AuthPass header .bubble,
+.AuthSpline .AuthPass header .bubble {
   background: #00be5f;
   border-color: #00be5f;
   padding: 15px 50px;
 }
-.Auth .AuthPass header .bubble:disabled {
+.Auth .AuthPass header .bubble:disabled,
+.AuthSpline .AuthPass header .bubble:disabled {
   opacity: 1;
 }
-.Auth .AuthPass header .bubble:hover {
+.Auth .AuthPass header .bubble:hover,
+.AuthSpline .AuthPass header .bubble:hover {
   background: #00b75b;
   border-color: #00b75b;
 }
-.Auth .AuthPass header .showPassBtn {
+.Auth .AuthPass header .showPassBtn,
+.AuthSpline .AuthPass header .showPassBtn {
   right: inherit;
   left: 200px;
   top: 12px;
   opacity: 0.3;
 }
-.Auth .AuthPass header .inputCtn {
+.Auth .AuthPass header .inputCtn,
+.AuthSpline .AuthPass header .inputCtn {
   position: relative;
   margin: 40px 0 10px;
 }
-.Auth .AuthPass header h1 {
+.Auth .AuthPass header h1,
+.AuthSpline .AuthPass header h1 {
   font-family: avenirBold;
   font-size: 4.3em;
   line-height: 1em;
   margin: 0 0 40px 0;
 }
-.Auth .AuthPass header p {
+.Auth .AuthPass header p,
+.AuthSpline .AuthPass header p {
   font-family: avenirMedium;
   font-size: 1.2em;
   padding-bottom: 15px;
@@ -1234,4 +1255,19 @@ footer img {
   border-radius: 0 20px 20px 0;
   background: linear-gradient(90deg, #16EFCB, #26D013);
   transition: 1s cubic-bezier(0.56, 0, 0, 1);
+}
+
+.Auth:not(.AuthSpline) {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20vw;
+  padding-top: 9vw;
+}
+.Auth:not(.AuthSpline) header {
+  position: static;
+  margin-right: 100px;
+}
+.Auth:not(.AuthSpline) > img {
+  width: 588px;
+  height: 525px;
 }/*# sourceMappingURL=index.css.map */
