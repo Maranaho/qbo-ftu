@@ -35,7 +35,7 @@ const SigninForm = () => {
                     url="/reasons"
                 />
                 <p>By selecting Create an account you are agreeing to our <span className="link">Terms</span> and acknowledge our <span className="link">Privacy Statement</span>.</p>
-                <small>Invisible reCAPTCHA by Google <span className="link">Privacy Policy</span> and <span className="link">Terms of use</span></small>.
+                <small>Invisible reCAPTCHA by Google <span className="link">Privacy Policy</span> and <span className="link">Terms of use</span>.</small>
             </div>
         </div>
     )

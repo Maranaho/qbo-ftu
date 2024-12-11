@@ -8,7 +8,7 @@ let initialQBOState = {
   selectedCompany:null,
   fetchingDetails: false,
   loadingCompanies: false,
-  access: "netflix&&naho",
+  access: "tickettailor",
   opens:[],
   routeArray: [
     "/reasons",
